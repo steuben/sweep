@@ -1,3 +1,4 @@
+// TEST
 
 // Init
 [] execVM "loadout\playersinit.sqf";
