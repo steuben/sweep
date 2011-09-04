@@ -5,7 +5,6 @@ loadout = leadVictor addAction ["Save Gear","loadout\loadout.sqf"];
 loadout = utilityVictor addAction ["Save Gear","loadout\loadout.sqf"]; 
 
 // misc actions
-intimidateAudio1 = leadVictor addAction [("<t color=""#ff6600"">" + ("Intimidate By Audio") + "</t>"),"extras\sound\ghostriderIntimidate.sqf", [], 300, false, true, ""];
 
 _coInMenu_act = utilityVictor addAction [("<t color=""#4693FF"">" + ("Construction") + "</t>"),"gen_action.sqf",[{	
 	
@@ -37,6 +36,7 @@ clearWeaponCargo utilityVictor;
 utilityVictor addWeaponCargo ["ACE_G36A1_AG36A1_D",100];
 utilityVictor addWeaponCargo ["ACE_G36A2_Bipod_D",100];
 utilityVictor addWeaponCargo ["G36K_camo",100];
+utilityVictor addWeaponCargo ["G36_C_SD_camo",100];
 utilityVictor addWeaponCargo ["SCAR_L_STD_EGLM_RCO",100];
 utilityVictor addWeaponCargo ["ACE_SCAR_H_STD_Spect",100];
 utilityVictor addWeaponCargo ["SCAR_H_STD_EGLM_Spect",100];
@@ -45,8 +45,11 @@ utilityVictor addWeaponCargo ["ACE_M16A4_ACG_GL_UP",100];
 utilityVictor addWeaponCargo ["ACE_M14_ACOG",100];
 
 utilityVictor addWeaponCargo ["M4A1_HWS_GL_SD_Camo",100];
+// Remove comments after ace update (ACE with ACEX: 1.11 RC3)
+// utilityVictor addWeaponCargo ["ACE_M4A1_AIM_GL_SD_F",100];
 utilityVictor addWeaponCargo ["ACE_SOC_M4A1_RCO_GL_UP",100];
 utilityVictor addWeaponCargo ["ACE_M4A1_ACOG_SD",100];
+
 
 utilityVictor addWeaponCargo ["ACE_HK416_D14_COMPM3_M320",100];
 utilityVictor addWeaponCargo ["ACE_HK417_leupold",100];

@@ -30,7 +30,7 @@ if (!alive popadley) then {
 	"ACE_USMC_Soldier_Medic_D" createUnit [getMarkerPos "steubenSpawn", alpha, "popadley=this", 0.6, ""];
 };
 
-if ((!alive popadley2) AND (getdammage medevacVictor < 0.9)) then {
+if (!alive popadley2) then {
 	"ACE_USMC_Soldier_Medic_D" createUnit [getMarkerPos "steubenSpawn", alpha, "popadley2=this", 0.6, ""];
 };
 
@@ -38,7 +38,7 @@ if (!alive steubenHummer1) then {
 	"ACE_USMC_SoldierS_Engineer_D" createUnit [getMarkerPos "steubenSpawn", alpha, "steubenHummer1=this", 0.6, ""];
 };
 
-if ((!alive steubenHummer2) AND (getdammage utilityHummvee < 0.9)) then {
+if (!alive steubenHummer2) then {
 	"ACE_USMC_SoldierS_Engineer_D" createUnit [getMarkerPos "steubenSpawn", alpha, "steubenHummer2=this", 0.6, ""];
 };
 
