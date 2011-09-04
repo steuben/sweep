@@ -1,0 +1,1 @@
+victor removeAction intimidateAudio1;[victor, "ghostrider"] call CBA_fnc_globalSay3d;sleep 120;intimidateAudio1 = victor addAction [("<t color=""#ff6600"">" + ("Intimidate By Audio") + "</t>"),"extras\sound\ghostriderIntimidate.sqf", [], 300, false, true, ""];
