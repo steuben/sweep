@@ -1,4 +1,4 @@
-// Mehr GIT testerei
+
 // Init
 [] execVM "loadout\playersinit.sqf";
 
