@@ -6,6 +6,7 @@ loadout = utilityVictor addAction ["Save Gear","loadout\loadout.sqf"];
 
 // misc actions
 
+intimidateAudio1 = leadVictor addAction [("<t color=""#ff6600"">" + ("Intimidate By Audio") + "</t>"),"extras\sound\ghostriderIntimidate.sqf", [], 300, false, true, ""];
 _coInMenu_act = utilityVictor addAction [("<t color=""#4693FF"">" + ("Construction") + "</t>"),"gen_action.sqf",[{	
 	
 	gnrf_CoIn = true;
@@ -45,7 +46,7 @@ utilityVictor addWeaponCargo ["ACE_M16A4_ACG_GL_UP",100];
 utilityVictor addWeaponCargo ["ACE_M14_ACOG",100];
 
 utilityVictor addWeaponCargo ["M4A1_HWS_GL_SD_Camo",100];
-// Remove comments after ace update (ACE with ACEX: 1.11 RC3)
+// Remove comments after ace update (ACE with ACEX: 1.11 RC3 or higher)
 // utilityVictor addWeaponCargo ["ACE_M4A1_AIM_GL_SD_F",100];
 utilityVictor addWeaponCargo ["ACE_SOC_M4A1_RCO_GL_UP",100];
 utilityVictor addWeaponCargo ["ACE_M4A1_ACOG_SD",100];

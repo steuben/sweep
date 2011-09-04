@@ -21,20 +21,22 @@ class Extended_PreInit_EventHandlers
 	gnrf_preInit = "[] execVM 'preInit.sqf';"
 };
 
+
+// User Interface Classes outsourced to:
 #include "data\ui.hpp"
 
 
-class Weapons
-{
+//class Weapons
+//{
 	// Add the weapons to the mission gear
-class M107 { count = 3; };
-class Binocular { count = 5; };
-class M24 { count = 3; };
-class G36C { count = 3; };
-class G36_C_SD_Eotech  { count = 3; };
-class Colt1911 { count = 3; };
-class M9SD { count = 3; };
-};
+//class M107 { count = 3; };
+//class Binocular { count = 5; };
+//class M24 { count = 3; };
+//class G36C { count = 3; };
+//class G36_C_SD_Eotech  { count = 3; };
+//class Colt1911 { count = 3; };
+//class M9SD { count = 3; };
+//};
 
 class Magazines
 {
@@ -119,13 +121,6 @@ class CfgSounds
 		{
 		name = "valkyrie";
 		sound[] = {"data\sound\valkyrie.ogg", db+5, 1.0};
-		titles[] = {};
-	};
-	
-	class ghostrider
-		{
-		name = "ghostrider";
-		sound[] = {"data\sound\ghostrider.ogg", db-1, 1.0};
 		titles[] = {};
 	};
 };
