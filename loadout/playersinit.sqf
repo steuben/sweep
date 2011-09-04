@@ -15,21 +15,21 @@ _unit setPos getMarkerPos "steubenSpawn";
 removeAllWeapons _unit;
 
 // PRIMARY WEAPON MAGS / 12 slots (S) (zb stanag) / 6 slots (M) (zb betaC / smaw rocket)
-_unit addMagazine "ACE_20Rnd_762x51_T_SCAR";
-_unit addMagazine "ACE_20Rnd_762x51_T_SCAR";
-_unit addMagazine "ACE_20Rnd_762x51_T_SCAR";
-_unit addMagazine "ACE_20Rnd_762x51_T_SCAR";
-_unit addMagazine "ACE_20Rnd_762x51_T_SCAR";
-_unit addMagazine "ACE_20Rnd_762x51_T_SCAR";
-_unit addMagazine "ACE_20Rnd_762x51_T_SCAR";
-_unit addMagazine "ACE_20Rnd_762x51_T_SCAR";
-_unit addMagazine "ACE_20Rnd_762x51_T_SCAR";
-_unit addMagazine "ACE_20Rnd_762x51_T_SCAR";
-_unit addMagazine "ACE_20Rnd_762x51_T_SCAR";
+_unit addMagazine "ACE_20Rnd_762x51_T_HK417";
+_unit addMagazine "ACE_20Rnd_762x51_T_HK417";
+_unit addMagazine "ACE_20Rnd_762x51_T_HK417";
+_unit addMagazine "ACE_20Rnd_762x51_T_HK417";
+_unit addMagazine "ACE_20Rnd_762x51_T_HK417";
+_unit addMagazine "ACE_20Rnd_762x51_T_HK417";
+_unit addMagazine "HandGrenade_West";
+_unit addMagazine "HandGrenade_West";
+_unit addMagazine "HandGrenade_West";
+_unit addMagazine "ACE_Claymore_M";
+_unit addMagazine "PipeBomb";
 _unit addMagazine "Laserbatteries";
 
 // PRIMARY WEAPON
-_unit addWeapon "SCAR_H_STD_EGLM_Spect";
+_unit addWeapon "ACE_HK417_Eotech_4x";
 
 // MEDICAL SUPPLIES FOR IFAK
 /*
@@ -42,13 +42,13 @@ _unit addMagazine "ACE_Morphine";
 */
 // SECONDARY WEAPON MAGS / 8 slots
 
-_unit addMagazine "1Rnd_HE_M203";
-_unit addMagazine "1Rnd_HE_M203";
-_unit addMagazine "1Rnd_HE_M203";
-_unit addMagazine "1Rnd_HE_M203";
-_unit addMagazine "1Rnd_HE_M203";
-_unit addMagazine "1Rnd_HE_M203";
-_unit addMagazine "1Rnd_HE_M203";
+_unit addMagazine "7Rnd_45ACP_1911";
+_unit addMagazine "7Rnd_45ACP_1911";
+_unit addMagazine "7Rnd_45ACP_1911";
+_unit addMagazine "7Rnd_45ACP_1911";
+_unit addMagazine "7Rnd_45ACP_1911";
+_unit addMagazine "7Rnd_45ACP_1911";
+_unit addMagazine "7Rnd_45ACP_1911";
 _unit addMagazine "7Rnd_45ACP_1911";
 
 // SECONDARY WEAPON
