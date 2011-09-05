@@ -46,8 +46,7 @@ utilityVictor addWeaponCargo ["ACE_M16A4_ACG_GL_UP",100];
 utilityVictor addWeaponCargo ["ACE_M14_ACOG",100];
 
 utilityVictor addWeaponCargo ["M4A1_HWS_GL_SD_Camo",100];
-// Remove comments after ace update (ACE with ACEX: 1.11 RC3 or higher)
-// utilityVictor addWeaponCargo ["ACE_M4A1_AIM_GL_SD_F",100];
+utilityVictor addWeaponCargo ["ACE_M4A1_AIM_GL_SD_F",100];
 utilityVictor addWeaponCargo ["ACE_SOC_M4A1_RCO_GL_UP",100];
 utilityVictor addWeaponCargo ["ACE_M4A1_ACOG_SD",100];
 
@@ -55,6 +54,7 @@ utilityVictor addWeaponCargo ["ACE_M4A1_ACOG_SD",100];
 utilityVictor addWeaponCargo ["ACE_HK416_D14_COMPM3_M320",100];
 utilityVictor addWeaponCargo ["ACE_HK417_leupold",100];
 utilityVictor addWeaponCargo ["ACE_HK417_Eotech_4x",100];
+utilityVictor addWeaponCargo ["ACE_HK416_D10_COMPM3_SD",100];
 utilityVictor addWeaponCargo ["ACE_HK416_D14_ACOG_PVS14",100];
 
 utilityVictor addWeaponCargo ["SCAR_L_STD_EGLM_TWS",100];
