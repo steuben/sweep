@@ -22,6 +22,3 @@ if (!isDedicated) then {
 	gnrf_players = call CBA_fnc_players;
 	publicVariable "gnrf_players";
 };
-
-
-//igithub test
