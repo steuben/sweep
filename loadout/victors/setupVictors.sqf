@@ -6,7 +6,7 @@ loadout = utilityVictor addAction ["Save Gear","loadout\loadout.sqf"];
 
 // misc actions
 
-intimidateAudio1 = leadVictor addAction [("<t color=""#ff6600"">" + ("Intimidate By Audio") + "</t>"),"extras\sound\ghostriderIntimidate.sqf", [], 300, false, true, ""];
+//intimidateAudio1 = leadVictor addAction [("<t color=""#ff6600"">" + ("Intimidate By Audio") + "</t>"),"extras\sound\ghostriderIntimidate.sqf", [], 300, false, true, ""];
 _coInMenu_act = utilityVictor addAction [("<t color=""#4693FF"">" + ("Construction") + "</t>"),"gen_action.sqf",[{	
 	
 	gnrf_CoIn = true;

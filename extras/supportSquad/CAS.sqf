@@ -60,6 +60,10 @@ if (!supportCAS) then
 		supportCAS = true;
 		publicVariable "supportCAS";
 		
+		
+		
+		// Ride Of Teh Valkyries
+		
 		while 
 		{
 			true
@@ -70,7 +74,31 @@ if (!supportCAS) then
 			
 			if (casRemove) exitWith { };
 			
-			if ((getDammage manatee >= 0.3)  OR (!alive manatee1)) exitWith 
+			if ((velocity manatee select 2) > 7) exitWith 
+			{
+
+			sleep 17;
+					[manatee, "valkyrie"] call CBA_fnc_globalSay3d;
+					
+			};
+			
+			sleep 3;
+		};
+		
+		
+		// Check Manatee's Status, remove & reset if dead or kapott.
+		
+		while 
+		{
+			true
+		} 
+		
+		do
+		{			
+			
+			if (casRemove) exitWith { };
+			
+			if ((getDammage manatee >= 0.3)  OR (!alive manatee1) OR (!alive manatee2)) exitWith 
 			{
 					_dude sideChat "Hammer, this is Ghostrider. Be advised, Manatee is down. I say again, Manatee is down! ";
 					victor removeAction clearSupportCAS;
@@ -90,7 +118,7 @@ if (!supportCAS) then
 					_dude sideChat "Pretty much zero, Hammer. Ghostrider out.";
 			};
 			
-			sleep 45;
+			sleep 35;
 		};
 		
 		

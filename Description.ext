@@ -120,7 +120,7 @@ class CfgSounds
 	class valkyrie
 		{
 		name = "valkyrie";
-		sound[] = {"data\sound\valkyrie.ogg", db+5, 1.0};
+		sound[] = {"data\sound\valkyrie.ogg", db+18, 1.0};
 		titles[] = {};
 	};
 };
