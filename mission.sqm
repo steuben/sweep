@@ -92,7 +92,7 @@ class Mission
 	};
 	class Groups
 	{
-		items=24;
+		items=19;
 		class Item0
 		{
 			side="WEST";
@@ -374,40 +374,31 @@ class Mission
 			side="WEST";
 			class Vehicles
 			{
-				items=1;
+				items=2;
 				class Item0
 				{
-					position[]={4038.6074,17.973169,3230.0435};
-					azimut=-19.737665;
-					id=93;
+					position[]={4012.7681,18.049574,3223.1895};
+					azimut=-359.32471;
+					id=96;
 					side="WEST";
-					vehicle="USMC_Soldier_MG";
+					vehicle="USMC_Soldier_TL";
 					leader=1;
-					rank="CORPORAL";
-					skill=0.33333331;
+					rank="SERGEANT";
+					skill=0.46666664;
 				};
-			};
-		};
-		class Item14
-		{
-			side="WEST";
-			class Vehicles
-			{
-				items=1;
-				class Item0
+				class Item1
 				{
 					position[]={4016.7383,18.106865,3221.8665};
 					azimut=-359.32489;
 					id=98;
 					side="WEST";
 					vehicle="USMC_Soldier_AR";
-					leader=1;
 					rank="CORPORAL";
 					skill=0.33333331;
 				};
 			};
 		};
-		class Item15
+		class Item14
 		{
 			side="WEST";
 			class Vehicles
@@ -427,7 +418,7 @@ class Mission
 				};
 			};
 		};
-		class Item16
+		class Item15
 		{
 			side="WEST";
 			class Vehicles
@@ -447,7 +438,7 @@ class Mission
 				};
 			};
 		};
-		class Item17
+		class Item16
 		{
 			side="WEST";
 			class Vehicles
@@ -467,12 +458,12 @@ class Mission
 				};
 			};
 		};
-		class Item18
+		class Item17
 		{
 			side="WEST";
 			class Vehicles
 			{
-				items=1;
+				items=4;
 				class Item0
 				{
 					position[]={4036.1621,17.820581,3220.5063};
@@ -484,33 +475,43 @@ class Mission
 					rank="SERGEANT";
 					skill=0.46666664;
 				};
-			};
-		};
-		class Item19
-		{
-			side="WEST";
-			class Vehicles
-			{
-				items=1;
-				class Item0
+				class Item1
+				{
+					position[]={4039.9036,17.810097,3221.8408};
+					azimut=-399.34204;
+					id=99;
+					side="WEST";
+					vehicle="USMC_Soldier_Medic";
+					skill=0.2;
+				};
+				class Item2
 				{
 					position[]={4036.6277,17.93251,3225.9331};
 					azimut=-6.7273588;
 					id=94;
 					side="WEST";
 					vehicle="USMC_Soldier_AR";
-					leader=1;
+					rank="CORPORAL";
+					skill=0.33333331;
+				};
+				class Item3
+				{
+					position[]={4038.6074,17.973169,3230.0435};
+					azimut=-19.737665;
+					id=93;
+					side="WEST";
+					vehicle="USMC_Soldier_MG";
 					rank="CORPORAL";
 					skill=0.33333331;
 				};
 			};
 		};
-		class Item20
+		class Item18
 		{
 			side="WEST";
 			class Vehicles
 			{
-				items=1;
+				items=2;
 				class Item0
 				{
 					position[]={4020.2441,18.118259,3222.3472};
@@ -518,18 +519,9 @@ class Mission
 					id=95;
 					side="WEST";
 					vehicle="USMC_Soldier_LAT";
-					leader=1;
 					skill=0.2;
 				};
-			};
-		};
-		class Item21
-		{
-			side="WEST";
-			class Vehicles
-			{
-				items=1;
-				class Item0
+				class Item1
 				{
 					position[]={4008.7595,18.146797,3223.9583};
 					azimut=-359.32489;
@@ -539,43 +531,6 @@ class Mission
 					leader=1;
 					rank="CORPORAL";
 					skill=0.33333331;
-				};
-			};
-		};
-		class Item22
-		{
-			side="WEST";
-			class Vehicles
-			{
-				items=1;
-				class Item0
-				{
-					position[]={4012.7681,18.049574,3223.1895};
-					azimut=-359.32471;
-					id=96;
-					side="WEST";
-					vehicle="USMC_Soldier_TL";
-					leader=1;
-					rank="SERGEANT";
-					skill=0.46666664;
-				};
-			};
-		};
-		class Item23
-		{
-			side="WEST";
-			class Vehicles
-			{
-				items=1;
-				class Item0
-				{
-					position[]={4039.9036,17.810097,3221.8408};
-					azimut=-399.34204;
-					id=99;
-					side="WEST";
-					vehicle="USMC_Soldier_Medic";
-					leader=1;
-					skill=0.2;
 				};
 			};
 		};
