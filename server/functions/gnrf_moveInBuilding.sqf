@@ -1,14 +1,9 @@
 
 
-	private ["_unit", "_pos", "_posArray", "_someH", "_building", "_i", "_done"]; 
+	private ["_unit", "_pos", "_posArray", "_someH", "_building", "_i", "_done", "_rnd"]; 
 	_unit = _this select 0; 
-	_pos = _this select 1; 
-	if (isNil "_pos") then {_pos = getPos _unit};
 	
-	_someH = createVehicle ["heliHempty", _pos, [], 0, "CAN_COLLIDE"];	
-	_building = nearestBuilding _someH;
-	deleteVehicle _someH;
-	
+	_building = nearestBuilding _unit;	
 	_done = false;
 	_i = 0;
 	_posArray = [];
@@ -27,17 +22,17 @@
 		};
 	};
 	
-	_unit disableAI "TARGET"; ///
+	if (count _posArray <= 1) exitWith {};
+	
+	_pos = _posArray call BIS_fnc_selectRandom;
+	_unit setPos _pos;
+
 	while {alive _unit} do {
 	
-//		player sideChat format ["%1 ### %2", _unit, _posArray];
 		_pos = _posArray call BIS_fnc_selectRandom;
 		_unit doMove _pos; 
-		waitUntil {sleep 0.11; (_unit distance _pos) < 1}; 
-//		player sideChat "boing!";
-//		_unit disableAI "TARGET";
-		if (count _posArray <= 1) exitWith {};
-		sleep random 60;
-//		_unit enableAI "TARGET"; 
-	
+		waitUntil {sleep 0.11; (_unit distance _pos) < 1.5}; 
+		doStop _unit;
+		_rnd = 5 + (random 40);
+		sleep _rnd;
 	};

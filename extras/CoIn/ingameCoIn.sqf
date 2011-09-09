@@ -155,7 +155,7 @@ gnrf_CoInMove_fnc = {
 		
 		_dis = [player, _target] call BIS_fnc_distance2D;
 		
-		if (_dis > 150) then {gnrf_CoInZAxis = 5000; gnrf_CoInTooFar = true;} else {gnrf_CoInZAxis = 0; gnrf_CoInTooFar = false;};
+		if (_dis > 300) then {gnrf_CoInZAxis = 5000; gnrf_CoInTooFar = true;} else {gnrf_CoInZAxis = 0; gnrf_CoInTooFar = false;};
 		
 		_pos = screenToWorld [0.5,0.5];
 		gnrf_CoInMoveH setPos [_pos select 0, _pos select 1, gnrf_CoInZAxis];
