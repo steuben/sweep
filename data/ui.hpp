@@ -1,8 +1,8 @@
-class wurstDialog {
+class uiAssmanStart {
   idd = -1;
   movingEnable = true;
   controlsBackground[] = {"bgShape","titleHome"};
-  controls[] = {"btn_reqFiremission","btn_reqAirsupport","btn_reqCarpetbomb","btn_reqSatscan","subtitleH1_support_artillery","subtitleH1_support_air","subtitleH1_support_satscan"};
+  controls[] = {"btn_reqFiremission","btn_reqAirsupport","btn_reqCarpetbomb","btn_reqSatscan","subtitleH1_support_artillery","subtitleH1_support_air","subtitleH1_support_satscan", "btn_close"};
   objects[] = {};
   
   class ButtonControlContent {
@@ -55,7 +55,7 @@ class wurstDialog {
     y = 0.37;
 	
 	text = "MC BATTERY";
-	action = "closeDialog 0; hint ""Close pushed"";"	
+	action = "hint ""MC Battery"";"	
   };
   
   class btn_reqSatscan:ButtonControlContent {
@@ -67,7 +67,7 @@ class wurstDialog {
     y = 0.533;
 	
 	text = "SATSCAN";
-	action = "closeDialog 0; hint ""Close pushed"";"	
+	action = "hint ""SATSCAN"";"	
   };
   
   
@@ -80,7 +80,7 @@ class wurstDialog {
     y = 0.37;
 	
 	text = "CAS 'MANATEE'";
-	action = "closeDialog 0; hint ""Close pushed"";"	
+	action = "hint ""CAS Manatee"";"	
   };
   
   class btn_reqCarpetbomb:ButtonControlContent {
@@ -92,7 +92,7 @@ class wurstDialog {
     y = 0.46;
 	
 	text = "CARPET BOMBER";
-	action = "closeDialog 0; hint ""Close pushed"";"	
+	action = "hint ""Carpet Bomber"";"	
   };
   
   class btn_close {
@@ -102,10 +102,10 @@ class wurstDialog {
     style = 2;
     moving = false;
 	
-    x = 0.45;
-    y = 0.4;
-    h = 0.07;
-    w = 0.10;
+    x = 0.78;
+    y = 0.20;
+    h = 0.08;
+    w = 0.14;
 	
     font = "EtelkaMonospaceProBold";
     sizeEx = 0.026;
@@ -115,24 +115,24 @@ class wurstDialog {
     
     default = false;
     colorText[] = {1,1,1,1}; // white
-    colorFocused[] = {0.7, 0.7, 0.4,0}; // green
+    colorFocused[] = {0.5, 0.5, 0.5,0}; // green
     colorShadow[] = {0.8,0.8,0.8,0}; // darkgrey
-    colorBorder[] = {0,0.5,0.5,0}; // grey
-    colorBackground[] = {0, 0, 0,1};
-    colorBackgroundActive[] = {0,0,0,1}; // green
+    colorBorder[] = {0,0.0,0.0,0}; // grey
+    colorBackground[] = {0, 0, 0,0};
+    colorBackgroundActive[] = {0,0,0,0}; // green
     colorDisabled[] = {0.6,0.6,0.6,1}; // red
     colorBackgroundDisabled[] = {0.3,0.3,0.3,0}; // grey
     borderSize = 0.000;
-    offsetX = 0.005;
-    offsetY = 0.005;
-    offsetPressedX = 0.002;
-    offsetPressedY = 0.002;
+    offsetX = 0.000;
+    offsetY = 0.000;
+    offsetPressedX = 0.000;
+    offsetPressedY = 0.000;
     soundEnter[] = {"",0,1}; // NoSound
     soundPush[] = {"",0,1}; // NoSound
     soundClick[] = {"",0,1}; // NoSound
     soundEscape[] = {"",0,1}; // NoSound
 	
-	text = "close [X]";
+	text = "CLOSE [X]";
 	
   };
   
@@ -150,7 +150,7 @@ class wurstDialog {
 	font = "EtelkaMonospaceProBold";  // defined constant
 	sizeEx = 0.023;
 	x = 0.4; y = 0.2;
-	w = 0.6;  h = 0.5;
+	w = 0.515;  h = 0.5;
 	text = "";
   };
   
@@ -165,7 +165,7 @@ class wurstDialog {
 	font = "EtelkaMonospaceProBold";  // defined constant
 	sizeEx = 0.043;
 	x = 0.4; y = 0.2;
-	w = 0.6;  h = 0.08;
+	w = 0.515;  h = 0.08;
 	text = "";
   };
   
@@ -186,7 +186,7 @@ class wurstDialog {
   
   class titleHome : titleBarText
   {
-	text = " BLUFOR ASS.MAN";
+	text = " BLUFOR ASSMAN";
   };
   
   class subtitleH1_support_artillery : subtitleH1

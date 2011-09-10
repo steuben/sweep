@@ -242,20 +242,7 @@ _newSectorInit_act= player addAction [("<t color=""#ff0000"">" + ("New Sector In
 [] execVM "sectors\initSector.sqf";
 }],0,false,true,"","gnrf_showSectorDebug"];	
 
-//dialog test
-_newDialog_act= steuben addAction [("<t color=""#00aa00"">" + ("UI Test") + "</t>"),"gen_action.sqf",[{
 
-	gnrf_UI = true;
-	_ok = createDialog "wurstDialog";
-	
-}],0,false,false,"","isNil 'gnrf_UI'"];
-
-_newDialog_act= bbq addAction [("<t color=""#00aa00"">" + ("UI Test") + "</t>"),"gen_action.sqf",[{
-
-	gnrf_UI = true;
-	_ok = createDialog "wurstDialog";
-	
-}],0,false,false,"","isNil 'gnrf_UI'"];
 
 ////////////////add player actions above/////////////////////////////////////////////////////////////
 };
@@ -289,7 +276,7 @@ gnrf_heli_teleport_act = blackhawk addAction [("<t color=""#1F67CC"">" + ("Telep
 
 call gnrf_heli_teleport;
 
-
+[] execVM "extras\assman\assmanInit.sqf";
 
 /*
 ////// Test Opfors
