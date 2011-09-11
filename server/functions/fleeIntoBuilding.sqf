@@ -3,7 +3,7 @@
 	private ["_unit", "_pos", "_posArray", "_someH", "_building", "_cnt", "_done", "_targetPos"]; 
 	
 	_unit = _this select 0; 	
-	if (_unit in gnrf_housedCivs) exitWith {};
+	if (!(_unit in gnrf_movingCivs)) exitWith {};
 	
 	_targetPos = [_unit, gnrf_allBuildings1st] call CBA_fnc_getNearest;
 		

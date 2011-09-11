@@ -75,4 +75,40 @@ _unit setVariable ["active", false];
 
 
 
+//////civInBuilding
+[-0, {
+
+private ["_unit", "_targetPos", "_building", "_rnd", "_dis", "_cnt", "_tick"]; 
+
+_building = gnrf_allBuildings call BIS_fnc_selectRandom;
+_targetPos = _building call BIS_fnc_selectRandom;
+_unitClass = ["TK_CIV_Takistani01_EP1", "TK_CIV_Takistani02_EP1", "TK_CIV_Takistani03_EP1", "TK_CIV_Takistani04_EP1", "TK_CIV_Takistani05_EP1", "TK_CIV_Takistani06_EP1", "ACE_TK_CIV_Takistani_Doctor_EP1", "Doctor", "SchoolTeacher", "RU_Rocker1", "TK_CIV_Woman01_EP1", "TK_CIV_Woman02_EP1", "TK_CIV_Woman03_EP1", "Farmwife4", "Madam3"] call BIS_fnc_selectRandom;
+_civUnit = _unitClass createUnit [_targetPos, gnrf_civBuilding_grp, "gnrf_currentCivUnit = this;", 1, ""];	
+_unit = gnrf_currentCivUnit;
+gnrf_currentCivUnit = nil;
+gnrf_civUnits set [count gnrf_civUnits, _unit];
+_unit setPos _targetPos; 
+
+gnrf_tmpUnit = _unit;
+publicVariable "gnrf_tmpUnit";
+
+while {alive _unit} do 
+{	
+	_targetPos = _building call BIS_fnc_selectRandom;
+	_distance = _unit distance _targetPos;
+	_tick = _distance / 5;
+	_unit doMove _targetPos; 
+	_unit forceSpeed 1;
+	waitUntil {sleep _tick; (_unit distance _targetPos) < 1}; 
+	doStop _unit;
+	_rnd = random 40;
+	sleep _rnd;
+};
+
+}] call CBA_fnc_globalExecute;
+
+waitUntil {!isNil "gnrf_tmpUnit"};
+player setPos getPos gnrf_tmpUnit;
+player sideChat format ["blub: %1", alive gnrf_tmpUnit];
+gnrf_tmpUnit = nil;
 

@@ -12,3 +12,4 @@ _newDialog_act= steuben addAction [("<t color=""#00aa00"">" + ("UI Test") + "</t
 }],0,false,false,"","isNil 'gnrf_UI'"];
 
 
+

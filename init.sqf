@@ -1,8 +1,9 @@
 // Init
+sleep 0.1;
+startLoadingScreen ["Loading mission, please wait..."];
+
 [] execVM "loadout\playersinit.sqf";
-
 [] execVM "loadout\victors\setupVictors.sqf";
-
 [] execVM "eventhandlers.sqf";
 [] execVM "extras\extrasInit.sqf";
 [] execVM "extras\commMenu\customComms.sqf";

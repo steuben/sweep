@@ -6,7 +6,5 @@ setDate [2011, 9, 10, (paramsArray select 3), 0];
 
 ////// Server only //////
 if (!isServer) exitWith {};
-
-[] execVM "extras\ambientCivilians\civInit.sqf";
 [paramsArray select 2] execVM "extras\moveCrusader.sqf";
 

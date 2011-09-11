@@ -1,4 +1,3 @@
-
 //////client//////
 if (!isDedicated) then {
 
@@ -36,7 +35,7 @@ grnf_firedNearPlayer_fnc = compile preProcessFileLineNumbers "extras\ambientCivi
 		publicVariable "gnrf_drebinEst";
 		[0, {[] execVM "extras\campDrebin.sqf";}] call CBA_fnc_globalExecute;
 
-	}],0,true,true,"","(player distance [3930,4660,0]) < 100"];	
+	}],0,true,true,"","(_target distance [3930,4660,0]) < 100"];	
 	
 };
  
@@ -64,18 +63,18 @@ _trg3 setTriggerStatements["this", "broadcast = 'stats'; publicVariable 'broadca
 
 	//AREA
 	//villa
-_trg4 = createTrigger["EmptyDetector", [4850,4600,0]]; 
-_trg4 setTriggerArea[200,200,0,false]; 
+_trg4 = createTrigger["EmptyDetector", [4875,4605,0]]; 
+_trg4 setTriggerArea[120,120,0,false]; 
 _trg4 setTriggerActivation["WEST","PRESENT",true]; 
 _trg4 setTriggerStatements["this AND ((player in thisList) OR (vehicle player in thisList))", "[0, {[[4850.7,4599.94,0]] execVM 'extras\opforInBuildings.sqf';}] call CBA_fnc_globalExecute;", ""]; 
 
 //////markers
 
 	//villa trigger area
-_villaArea = createMarker ["gnrf_villaAreaName",[4850,4600,0]];
+_villaArea = createMarker ["gnrf_villaAreaName",[4875,4605,0]];
 _villaArea setMarkerColor "ColorBlack";
 _villaArea setMarkerShape "ELLIPSE";
-_villaArea setMarkerSize [200, 200];
+_villaArea setMarkerSize [120, 120];
 _villaArea setMarkerBrush "FDIAGONAL";
 
 //////vars
@@ -129,8 +128,6 @@ gnrf_moveInBuilding_fnc = compile preProcessFileLineNumbers "server\functions\gn
 
 gnrf_createCivSet_fnc = compile preProcessFileLineNumbers "extras\ambientCivilians\createCivSet.sqf";
 
-gnrf_civDisToTarget_fnc = compile preProcessFileLineNumbers "extras\ambientCivilians\civDisToTarget.sqf";
-
 gnrf_civInBuilding_fnc = compile preProcessFileLineNumbers "extras\ambientCivilians\civInBuilding.sqf";
 
 gnrf_fleeIntoBuilding_fnc = compile preProcessFileLineNumbers "server\functions\fleeIntoBuilding.sqf";
@@ -158,4 +155,4 @@ publicVariable "initPanties_compiled";
 
 //[] execVM "extras\noGoZone\noGoZoneServer.sqf";
 //[] execVM "extras\opforAssault\assaultInit.sqf";
-//[] execVM "extras\ambientCivilians\civInit.sqf";
+[] execVM "extras\ambientCivilians\civInit.sqf";

@@ -64,23 +64,23 @@
 		
 		////statics
 		//mg1
-		_createUnit = "ACE_RU_Soldier_D" createUnit [_spawnPos, _opforSet3, "grnf_villaGunner1 = this;", 9, "Corporal"];
+		_createUnit = "ACE_RU_Soldier_D" createUnit [_spawnPos, _opforSet3, "grnf_currentUnit = this;", 9, "Corporal"];
 		_staticMG1 = "DSHKM_TK_GUE_EP1" createVehicle [0,0,0];
 		_staticMG1 setPosASL [4845.69,4589.48,41.9963];
 		_staticMG1 setDir 225;
-		grnf_villaGunner1 moveInGunner _staticMG1;				
-		grnf_villaGunner1 doWatch [4808.41,4527.07,5];
+		grnf_currentUnit moveInGunner _staticMG1;				
+		grnf_currentUnit doWatch [4808.41,4527.07,5];
 		_mag = (getArray (configFile >> "CfgVehicles" >> typeOf _staticMG1 >> "Turrets" >> "MainTurret" >> "magazines")) select 0;	
 		_staticMG1 setVehicleAmmo 0;
 		{_staticMG1 addMagazine _mag} forEach [1,2,3,4];
 		
 		//mg2
-		_createUnit = "ACE_RU_Soldier_D" createUnit [_spawnPos, _opforSet3, "grnf_villaGunner2 = this;", 9, "Corporal"];
+		_createUnit = "ACE_RU_Soldier_D" createUnit [_spawnPos, _opforSet3, "grnf_currentUnit = this;", 9, "Corporal"];
 		_staticMG2 = "DSHKM_TK_GUE_EP1" createVehicle [0,0,0];
 		_staticMG2 setPosASL [4844.62,4609.73,45.4529];
 		_staticMG2 setDir 45;
-		grnf_villaGunner2 moveInGunner _staticMG2;		
-		grnf_villaGunner2 doWatch [4875.43,4684.39,0];
+		grnf_currentUnit moveInGunner _staticMG2;		
+		grnf_currentUnit doWatch [4875.43,4684.39,0];
 		_mag = (getArray (configFile >> "CfgVehicles" >> typeOf _staticMG2 >> "Turrets" >> "MainTurret" >> "magazines")) select 0;	
 		_staticMG2 setVehicleAmmo 0;
 		{_staticMG2 addMagazine _mag} forEach [1,2,3,4];		
