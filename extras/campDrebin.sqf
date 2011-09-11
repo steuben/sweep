@@ -27,8 +27,7 @@ for "_i" from 0 to (count _statics)-1 do {
 	_mag = (getArray (configFile >> "CfgVehicles" >> typeOf _target >> "Turrets" >> "MainTurret" >> "magazines")) select 0;
 	
 	_target setVehicleAmmo 0;
-	{_target addMagazine _mag} forEach [1,2,3,4];				
-
+	{_target addMagazine _mag} forEach [1,2,3,4];			
 };
 
 //mash becomes repawn point
@@ -44,14 +43,13 @@ _officer setPosASL _pos;
 _officer setGroupId ["2nd-Platoon-PC"];
 
 //create squad leader
-_grp = Creategroup WEST;
 _pos = [3996.99,4678.08,32.5943];
 _squadLeader = _grp createUnit ["USMC_Soldier_SL", [0,0,0], [], 10, "FORM"];
 _squadLeader setPosASL _pos;
 _squadLeader setGroupId ["2nd-Platoon-PC"];
 
-// call counter attack action
 
+// call counter attack action
 [-1, {
 
 gnrf_counterAttack_Act = player addAction [("<t color=""#1F67CC"">" + ("Get new orders") + "</t>"),"gen_action.sqf",[{

@@ -1,6 +1,8 @@
+
 showCompass = 1;
 showGPS = 1;
 showWatch = 1;
+showRadio = 1;
 
 respawn = "BASE";
 respawnDelay = 2;
