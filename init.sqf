@@ -17,7 +17,6 @@ Hammer = group major;
 civilian setFriend [east,1];
 civilian setFriend [west,1];
 
-
 //player names are stored to array
 if (!isDedicated) then {
 	gnrf_players = call CBA_fnc_players;
