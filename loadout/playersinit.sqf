@@ -870,5 +870,6 @@ gnrf_respawnInfo set [0, [medevacVictor, 10]]; //add respawn pos - players alway
 gnrf_respawnInfo set [1, [[4057.44,3189.92,16.9818], 0]]; //[[position] OR global object name for dynamic position, offset (radius in m, 0 for exact positioning)]
 publicVariable "gnrf_respawnInfo"; 		 
 
-_obj = 	"Sign_arrow_down_EP1" createVehicle [0,0,0];
-_obj attachTo [player, [0,0,4]];
+//helper arrow
+gnrf_helperArrow = 	"Sign_arrow_down_EP1" createVehicle [0,0,0];
+gnrf_helperArrow attachTo [player, [0,0,4]];

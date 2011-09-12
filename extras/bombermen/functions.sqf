@@ -1,4 +1,5 @@
 
+
 // explode fnc
 gnrf_bombermanBoom_fnc = {
 
@@ -18,8 +19,8 @@ gnrf_bombermanBoom_fnc = {
 	};
 };
 
-// get close to target
 
+// get close to target
 gnrf_bombermanGetCloser_fnc = {
 	
 	_bomber = _this select 0;

@@ -10,7 +10,7 @@ if ( isNil{player getVariable "done"} ) then
 			
 			player setVariable ["deathPos", getPos player];
 			waitUntil {alive player}; 
-			execVM "loadout\respawn.sqf";					
+			[] spawn gnrf_playerRespawn_fnc;			
 		};	
 	}];
 	player setVariable ["done", true];

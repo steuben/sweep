@@ -110,6 +110,15 @@ class Params
                 default = 0;
         };
 		
+		class helperArrow
+        {
+        //paramsArray[6]
+                title = "Arrow Head Mode";
+                values[] = {0, 1};
+                texts[] = {"Disabled", "Enabled"};
+                default = 1;
+        };
+		
 };
 
 

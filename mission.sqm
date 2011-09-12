@@ -1360,7 +1360,7 @@ class Mission
 	};
 	class Markers
 	{
-		items=337;
+		items=336;
 		class Item0
 		{
 			position[]={4320.0532,18.07309,3949.8765};
@@ -4074,14 +4074,6 @@ class Mission
 			angle=1.35077;
 		};
 		class Item335
-		{
-			position[]={3910.0879,35.731667,4663.7417};
-			name="BaconHill";
-			text="Bacon Hill";
-			type="waypoint";
-			colorName="ColorGreen";
-		};
-		class Item336
 		{
 			position[]={4128.7896,16.285576,4262.8848};
 			name="falafelCharlieSpawn0";

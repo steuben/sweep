@@ -112,3 +112,21 @@ player setPos getPos gnrf_tmpUnit;
 player sideChat format ["blub: %1", alive gnrf_tmpUnit];
 gnrf_tmpUnit = nil;
 
+
+
+_classArray = ["FlagCarrierUSArmy_EP1"];
+_posArray = [[3942.93,4669.24,38.4312]];     
+_dirArray = [358.92];     
+_vectorArray = [[0,0,1]]; 
+  
+for '_i' from 0 to 0 do 
+{    	
+	_class = _classArray select _i;
+    _pos = _posArray select _i;  
+	_dir = _dirArray select _i; 
+	_vector = _vectorArray select _i;  
+	_obj = _class createVehicle _pos;  
+	_obj setDir _dir;   
+	_obj setPosASL _pos; 
+	_obj setVectorUp _vector; 
+};   
