@@ -37,8 +37,37 @@ _weapons = player getVariable "weapons";
 reload player;
 
 //re-attach helper arrow
-gnrf_helperArrow attachTo [player, [0,0,4]];
+if (!isNil "gnrf_helperArrow") then 
+{
+	gnrf_helperArrow attachTo [player, [0,0,4]];
+};
 
 //re-add debug actions 
 if (!isnil "debugModeOn") then {[] spawn gnrf_addDebugOptions_fnc};
+
+// call counter attack action
+if (!isNil "gnrf_drebinEst") then 
+{
+	gnrf_counterAttack_Act = player addAction [("<t color=""#1F67CC"">" + ("Get new orders") + "</t>"),"gen_action.sqf",[{
+
+		if (!isNil "gnrf_CAcalled") exitWith {};
+		gnrf_CAcalled = true;
+		publicVariable "gnrf_CAcalled";
+		[0, {[] execVM "extras\opforAssault\assaultInit.sqf";}] call CBA_fnc_globalExecute;
+
+		broadcast = "counterAttack";
+		publicVariable "broadcast";
+		broadcast = nil;
+
+		titleText ["Enemy Forces Advancing On Zargabad From The North.", "PLAIN"];
+		sleep 2;
+		major sideChat "All GHOSTRIDER units, be advised.";
+		major sideChat "Russian Forces have massed up on the northern flank.";
+		sleep 4;
+		major sideChat "Expect a fierce combined arms assault, there are multiple armor units in support of a company sized Mech.Inf. Element approaching Hazar Bagh.";
+		sleep 4;
+		major sideChat "Hold the line! The City you just fucked up is counting on you now. Hammer out.";
+
+	}],0,true,true,"","isNil 'gnrf_CAcalled'"];
+};
 

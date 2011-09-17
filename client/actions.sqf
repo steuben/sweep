@@ -10,3 +10,7 @@ gnrf_buildDrebin_Act = gnrf_drebinFlagPole addAction [("<t color=""#1F67CC"">" +
 	[0, {[] execVM "extras\campDrebin.sqf";}] call CBA_fnc_globalExecute;
 
 }],0,true,true,"",""];
+
+
+
+

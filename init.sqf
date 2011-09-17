@@ -1,6 +1,6 @@
 // Init
 sleep 0.1;
-startLoadingScreen ["Loading mission, please wait..."];
+[-2, {startLoadingScreen ["Loading mission, please wait..."];}] call CBA_fnc_globalExecute;
 
 [] execVM "loadout\playersinit.sqf";
 [] execVM "loadout\victors\setupVictors.sqf";

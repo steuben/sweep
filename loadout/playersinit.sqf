@@ -871,5 +871,8 @@ gnrf_respawnInfo set [1, [[4057.44,3189.92,16.9818], 0]]; //[[position] OR globa
 publicVariable "gnrf_respawnInfo"; 		 
 
 //helper arrow
-gnrf_helperArrow = 	"Sign_arrow_down_EP1" createVehicle [0,0,0];
-gnrf_helperArrow attachTo [player, [0,0,4]];
+if ((paramsArray select 6) == 1) then 
+{
+	gnrf_helperArrow = 	"Sign_arrow_down_EP1" createVehicle [0,0,0];
+	gnrf_helperArrow attachTo [player, [0,0,4]];
+};
