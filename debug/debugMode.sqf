@@ -86,11 +86,6 @@ _getBuildingPos_act = player addAction [("<t color=""#1F67CC"">" + ("Get Buildin
 }],0,false, false,"","gnrf_debugMenu"];
 
 
-
-
-
-
-
 //debug object
 _debugObj_act = player addAction [("<t color=""#1F67CC"">" + ("Debug Civ Unit") + "</t>"),"gen_action.sqf",[{
 	
@@ -236,12 +231,14 @@ _debugGolem_act = player addAction [("<t color=""#053F90"">" + ("Debug Golem") +
 _debugMushroom_act = player addAction [("<t color=""#053F90"">" + ("Debug Mushroom") + "</t>"),"gen_action.sqf",[{
 [] execVM "debug\debugMushroom.sqf";
 }],0,false,true,"","gnrf_showSectorDebug"];;
-	
+
+_debugBacon_act = player addAction [("<t color=""#053F90"">" + ("Debug Bacon") + "</t>"),"gen_action.sqf",[{
+[] execVM "debug\debugBacon.sqf";
+}],0,false,true,"","gnrf_showSectorDebug"];;
 	
 _newSectorInit_act= player addAction [("<t color=""#ff0000"">" + ("New Sector Init") + "</t>"),"gen_action.sqf",[{
 [] execVM "sectors\initSector.sqf";
 }],0,false,true,"","gnrf_showSectorDebug"];	
-
 
 
 ////////////////add player actions above/////////////////////////////////////////////////////////////

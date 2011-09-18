@@ -37,9 +37,9 @@ publicVariable "gnrf_respawnInfo";
 //create officer
 _grp = Creategroup WEST;
 _pos = [3972.88,4647.61,37.1893];
-_officer = _grp createUnit ["USMC_Soldier_Officer", [0,0,0], [], 10, "FORM"];
-_officer setPosASL _pos;
-_officer setGroupId ["2nd-Platoon-PC"];
+gnrf_drebinOfficer = _grp createUnit ["USMC_Soldier_Officer", [0,0,0], [], 10, "FORM"];
+gnrf_drebinOfficer setPosASL _pos;
+gnrf_drebinOfficer setGroupId ["2nd-Platoon-PC"];
 
 //create squad leader
 _pos = [3996.99,4678.08,32.5943];
@@ -51,7 +51,7 @@ _squadLeader setGroupId ["2nd-Platoon-PC"];
 // call counter attack action
 [-1, {
 
-gnrf_counterAttack_Act = player addAction [("<t color=""#1F67CC"">" + ("Get new orders") + "</t>"),"gen_action.sqf",[{
+gnrf_counterAttack_Act = gnrf_drebinOfficer addAction [("<t color=""#1F67CC"">" + ("Get new orders") + "</t>"),"gen_action.sqf",[{
 
 	if (!isNil "gnrf_CAcalled") exitWith {};
 	gnrf_CAcalled = true;
@@ -74,6 +74,8 @@ gnrf_counterAttack_Act = player addAction [("<t color=""#1F67CC"">" + ("Get new 
 }],0,true,true,"","isNil 'gnrf_CAcalled'"];
 
 }] call CBA_fnc_globalExecute;
+
+[-1, {titleText ["Receiver new orders at the baracks", "PLAIN"];}] call CBA_fnc_globalExecute;
 
 
 

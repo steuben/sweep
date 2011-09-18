@@ -130,3 +130,10 @@ for '_i' from 0 to 0 do
 	_obj setPosASL _pos; 
 	_obj setVectorUp _vector; 
 };   
+
+
+///////////////debug unit//////////////////
+
+	_target = cursorTarget;
+	_targetName = _target call grnf_GetDisplayName_fnc;	
+	player sideChat format ["name %1", _targetName]; 
