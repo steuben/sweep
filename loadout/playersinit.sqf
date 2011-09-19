@@ -602,13 +602,6 @@ steuben5 moveInCargo [leadVictor, 3];
 gnrf_initCounter = gnrf_initCounter + 1;
 publicVariable "gnrf_initCounter";
 
-//helper arrow
-if ((paramsArray select 6) == 1) then 
-{
-	gnrf_helperArrow = 	"Sign_arrow_down_EP1" createVehicle [0,0,0];
-	gnrf_helperArrow attachTo [bbq, [0,0,4]];
-};
-
 };
 
 ////////////////////////////////////////////////////////////////////////
@@ -866,13 +859,6 @@ bbqHummer2 moveInGunner hummvee2;
 
 gnrf_initCounter = gnrf_initCounter + 1;
 publicVariable "gnrf_initCounter";
-
-//helper arrow
-if ((paramsArray select 6) == 1) then 
-{
-	gnrf_helperArrow = 	"Sign_arrow_down_EP1" createVehicle [0,0,0];
-	gnrf_helperArrow attachTo [steuben, [0,0,4]];
-};
 
 };
 

@@ -2,7 +2,7 @@
 
 //player killed
 
-if ( isNil{player getVariable "done"} ) then 
+if (isNil{player getVariable "done"}) then 
 {
 	player addEventHandler ["killed", 
 	{ 
