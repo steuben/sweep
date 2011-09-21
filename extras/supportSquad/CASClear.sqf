@@ -1,3 +1,6 @@
+supportCASBusy = true;
+publicVariable "supportCASBusy";
+
 casRemove = true;
 publicVariable "casRemove";
 
@@ -42,6 +45,9 @@ supportMCAS = false;
 publicVariable "supportMCAS";
 
 major sideChat "All Ghostrider elements, be advised: Close Air Support standing by.";
+
+supportCASBusy = false;
+publicVariable "supportCASBusy";
 
 // Reset Victor Action
 [] execVM "extras\supportSquad\supportSquadInit.sqf";

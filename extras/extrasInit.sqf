@@ -12,6 +12,7 @@ if (!isDedicated) then {
 	[] execVM "extras\supportSquad\supportSquadInit.sqf";
 	[] execVM "extras\surveillance\revealUnits.sqf";
 	[] execVM "extras\mapTool.sqf";
+	[] execVM "extras\assman\assmanInit.sqf";
 	[] spawn grnf_addActions_fnc;		
 	//[] execVM "extras\noGoZone\noGoZoneClient.sqf";
 	_fnc_debugRank = {while {true} do {player setUnitRank "COLONEL"; sleep 2;};};

@@ -21,6 +21,9 @@ if (supportCAS) then
 
 if (!supportCAS) then 
 {
+		supportCASBusy = true;
+		publicVariable "supportCASBusy";
+		
 		casRemove = false;
 		publicVariable "casRemove";
 		
@@ -59,6 +62,9 @@ if (!supportCAS) then
 		
 		supportCAS = true;
 		publicVariable "supportCAS";
+		
+		supportCASBusy = false;
+		publicVariable "supportCASBusy";
 		
 		
 		

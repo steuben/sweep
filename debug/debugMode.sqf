@@ -273,7 +273,7 @@ gnrf_heli_teleport_act = blackhawk addAction [("<t color=""#1F67CC"">" + ("Telep
 
 call gnrf_heli_teleport;
 
-[] execVM "extras\assman\assmanInit.sqf";
+
 
 /*
 ////// Test Opfors
