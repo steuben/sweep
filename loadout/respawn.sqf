@@ -50,3 +50,6 @@ reload player;
 //re-add debug actions 
 if (!isnil "debugModeOn") then {[] spawn gnrf_addDebugOptions_fnc};
 
+//make player name public - test
+if (player == steuben) then {publicVariable "steuben"};
+if (player == bbq) then {publicVariable "bbq"};

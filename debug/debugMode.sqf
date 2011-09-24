@@ -91,12 +91,8 @@ _debugObj_act = player addAction [("<t color=""#1F67CC"">" + ("Debug Civ Unit") 
 	
 	_target = cursorTarget;
 	_targetName = _target call grnf_GetDisplayName_fnc;
-	
-	_targetPos = _target getVariable "targetPos";
-	_veh = _target getVariable "vehicle";
-	_roles = _target getVariable "roles";
-	
-	player sideChat format ["targetPos %1 # roles %2 # in housed Civs %3 # in moving Civs %4", _targetPos, _roles, (_target in gnrf_housedCivs), (_target in gnrf_movingCivs)]; 
+	_roles = _target getVariable "roles";	
+	player sideChat format ["Name: %1 # Roles: %2", _targetName, _roles]; 
 	
 }],0,false,false,"","gnrf_debugMenu"];
 

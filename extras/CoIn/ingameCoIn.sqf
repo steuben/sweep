@@ -250,7 +250,7 @@ _displayMyObjects_fnc = {
 		};
 		
 		_dis = player distance gnrf_coInHolder;
-		if (_dis < 20) then {gnrf_coInInRange = true} else {gnrf_coInInRange = false};
+		if (_dis < 300) then {gnrf_coInInRange = true} else {gnrf_coInInRange = false};
 
 	};
 	gnrf_CoIn = nil;

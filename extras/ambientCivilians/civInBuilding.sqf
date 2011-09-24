@@ -10,7 +10,7 @@ _unit = gnrf_currentCivUnit;
 gnrf_currentCivUnit = nil;
 gnrf_civUnits set [count gnrf_civUnits, _unit];
 _unit setPos _targetPos; 
-
+_unit setVariable ["roles", ["housed"], true];
 while {alive _unit} do 
 {	
 	_targetPos = _building call BIS_fnc_selectRandom;
