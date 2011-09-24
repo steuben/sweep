@@ -5,7 +5,9 @@ if (!isDedicated) then {
 	grnf_getDisplayName_fnc = compile preProcessFileLineNumbers "client\functions\getDisplayName.sqf";
 	grnf_firedNearPlayer_fnc = compile preProcessFileLineNumbers "extras\ambientCivilians\handleFiredNear.sqf";
 	grnf_addActions_fnc = compile preProcessFileLineNumbers "client\actions.sqf";
+	grnf_keyHandling_fnc = compile preProcessFileLineNumbers "client\functions\keyHandling.sqf";
 
+	
 	//////scripts
 	[] execVM "debug\debugMode.sqf";
 	[] execVM "extras\atv\initATV.sqf";
@@ -20,7 +22,7 @@ if (!isDedicated) then {
 	[] execVM "extras\CoIn\CoIn.sqf";
 	[] execVM "extras\freezeTime.sqf";
 	if ((paramsArray select 6) == 1) then {[] execVM "extras\helperArrow.sqf"};
-
+	[] execVM "client\eventHandlers.sqf";
 
 //////triggers
 

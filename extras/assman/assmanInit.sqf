@@ -25,3 +25,6 @@ _newDialog_act= bbq addAction [("<t color=""#FF3300"">" + ("ASSMAN") + "</t>"),"
 	
 }],0,false,false,"","isNil 'gnrf_UI'"];
 
+
+
+

@@ -4,7 +4,6 @@ sleep 0.1;
 
 [] execVM "loadout\playersinit.sqf";
 [] execVM "loadout\victors\setupVictors.sqf";
-[] execVM "eventhandlers.sqf";
 [] execVM "extras\extrasInit.sqf";
 [] execVM "extras\commMenu\customComms.sqf";
 major setGroupID ["HAMMER","GroupColor4"];
