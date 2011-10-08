@@ -42,13 +42,16 @@ reload player;
 	_dude = _this;
 	if ((_dude != player) AND (!isNil "gnrf_helperArrow")) then 
 	{
+		_array = gnrf_players - [player];
+		if ((count _array) < 1) exitWith {};
+		_target = _array select 0;
 		gnrf_helperArrow attachTo [_dude, [0,0,4]];
 	};
 
 }, player] call CBA_fnc_globalExecute;
 
 //re-add debug actions 
-if (!isnil "debugModeOn") then {[] spawn gnrf_addDebugOptions_fnc};
+if (debugModeOn) then {[] spawn gnrf_addDebugOptions_fnc};
 
 //make player name public - test
 if (player == steuben) then {publicVariable "steuben"};

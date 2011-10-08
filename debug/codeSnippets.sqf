@@ -137,3 +137,10 @@ for '_i' from 0 to 0 do
 	_target = cursorTarget;
 	_targetName = _target call grnf_GetDisplayName_fnc;	
 	player sideChat format ["name %1", _targetName]; 
+	
+	
+	
+//////////////////////////
+
+_building = getPos player nearestObject "Building";
+_building setDamage 0;

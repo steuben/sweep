@@ -9,7 +9,7 @@ if (!isDedicated) then {
 
 	
 	//////scripts
-	[] execVM "debug\debugMode.sqf";
+	if ((paramsArray select 0) == 1) then {[] execVM "debug\debugMode.sqf"};
 	[] execVM "extras\atv\initATV.sqf";
 	[] execVM "extras\supportSquad\supportSquadInit.sqf";
 	[] execVM "extras\surveillance\revealUnits.sqf";
