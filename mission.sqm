@@ -4029,7 +4029,7 @@ class Mission
 		};
 		class Item329
 		{
-			position[]={4283.0996,15.451906,4650.0688};
+			position[]={4308.7632,15.442933,4670.8267};
 			name="opforAttack_defense1";
 			type="Empty";
 		};
