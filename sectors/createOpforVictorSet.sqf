@@ -12,7 +12,7 @@ if (isServer) then
 	
 	_armorChance = round(random 100);
 	_canHazArmor = 0;
-	if(_armorChance < 45) then
+	if(_armorChance < 50) then
 	{
 		_canHazArmor = 1;
 	};
@@ -73,7 +73,7 @@ if (isServer) then
 					
 					case 2 : 
 					{
-						// TK ARMY UAZ AGS30 GMG
+						// TK ARMY OFFROAD DSHKM
 							
 						// GROUP
 						_opforSet = createGroup EAST;
@@ -81,7 +81,7 @@ if (isServer) then
 						// UNITS
 						
 						// UAZ AGS
-						_Victor1 = "UAZ_AGS30_TK_EP1" createVehicle getMarkerPos _groupSpawnPoint;
+						_Victor1 = "Offroad_DSHKM_INS" createVehicle getMarkerPos _groupSpawnPoint;
 						_Victor1 setVariable ["sector", _sector, true];
 						opforTrashbin set [count opforTrashbin, _Victor1];
 
@@ -95,15 +95,15 @@ if (isServer) then
 					
 					case 3 : 
 					{
-						// PickUp MMG
+						// UAZ DSHKM
 							
 						// GROUP
 						_opforSet = createGroup EAST;
 
 						// UNITS
 						
-						// PickUp MMG
-						_Victor1 = "Pickup_PK_TK_GUE_EP1" createVehicle getMarkerPos _groupSpawnPoint;
+						// UAZ_MG_INS 
+						_Victor1 = "UAZ_MG_INS" createVehicle getMarkerPos _groupSpawnPoint;
 						_Victor1 setVariable ["sector", _sector, true];
 						opforTrashbin set [count opforTrashbin, _Victor1];
 
@@ -225,15 +225,15 @@ if (isServer) then
 					
 					case 2 : 
 					{
-						// UAZ_AGS30_RU
+						// Offroad SPG-9
 
 						// GROUP
 						_opforSet = createGroup EAST;
 
 						// UNITS
 							
-						// UAZ_AGS30_RU
-						_Victor1 = "UAZ_AGS30_RU" createVehicle getMarkerPos _groupSpawnPoint;
+						// ACE_Offroad_SPG9_INS
+						_Victor1 = "ACE_Offroad_SPG9_INS" createVehicle getMarkerPos _groupSpawnPoint;
 						_Victor1 setVariable ["sector", _sector, true];
 						opforTrashbin set [count opforTrashbin, _Victor1];
 
