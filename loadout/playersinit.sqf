@@ -150,10 +150,10 @@ if (player == steuben) then {
 "ACE_USMC_Soldier_AT_D" createUnit [getMarkerPos "steubenSpawn", alpha, "steuben4=this", 0.8, ""];
 "ACE_USMC_Soldier_GL_D" createUnit [getMarkerPos "steubenSpawn", alpha, "steuben5=this", 0.8, ""];
 
-"ACE_USMC_Soldier_Medic_D" createUnit [getMarkerPos "steubenSpawn", alpha, "popadley=this", 0.6, ""];
-"ACE_USMC_Soldier_Medic_D" createUnit [getMarkerPos "steubenSpawn", alpha, "popadley2=this", 0.6, ""];
-"ACE_USMC_SoldierS_Engineer_D" createUnit [getMarkerPos "steubenSpawn", alpha, "steubenHummer1=this", 0.7, ""];
-"ACE_USMC_SoldierS_Engineer_D" createUnit [getMarkerPos "steubenSpawn", alpha, "steubenHummer2=this", 0.7, ""];
+"ACE_USMC_Soldier_Medic_D" createUnit [getMarkerPos "steubenSpawn", alpha, "steuben6=this", 0.6, ""];
+"ACE_USMC_Soldier_Medic_D" createUnit [getMarkerPos "steubenSpawn", alpha, "steuben7=this", 0.6, ""];
+"ACE_USMC_SoldierS_Engineer_D" createUnit [getMarkerPos "steubenSpawn", alpha, "steuben8=this", 0.7, ""];
+"ACE_USMC_SoldierS_Engineer_D" createUnit [getMarkerPos "steubenSpawn", alpha, "steuben9=this", 0.7, ""];
 
 waitUntil {({alive _x} count units alpha) == 9};
 
@@ -364,8 +364,8 @@ publicVariable "steuben5Weapons";
 publicVariable "steuben5Magazines";
 
 
-// 	Medic popadley
-_unit = popadley;
+// 	Medic steuben6
+_unit = steuben6;
 
 removeAllWeapons _unit;
 
@@ -406,16 +406,16 @@ _unit addWeapon "ItemGPS";
 _unit addWeapon "ACE_Rucksack_MOLLE_Green_Medic";
 
 // DURCHLADEN
-reload popadley;
+reload steuben6;
 
-popadleyWeapons = weapons popadley;
-popadleyMagazines = magazines popadley;
+popadleyWeapons = weapons steuben6;
+popadleyMagazines = magazines steuben6;
 publicVariable "popadleyWeapons";
 publicVariable "popadleyMagazines";
 
 
-// 	Medic popadley2
-_unit = popadley2;
+// 	Medic steuben7
+_unit = steuben7;
 
 removeAllWeapons _unit;
 
@@ -456,16 +456,16 @@ _unit addWeapon "ItemGPS";
 _unit addWeapon "ACE_Rucksack_MOLLE_Green_Medic";
 
 // DURCHLADEN
-reload popadley2;
+reload steuben7;
 
-popadley2Weapons = weapons popadley2;
-popadley2Magazines = magazines popadley2;
+popadley2Weapons = weapons steuben7;
+popadley2Magazines = magazines steuben7;
 publicVariable "popadley2Weapons";
 publicVariable "popadley2Magazines";
 
 
-// 	Engineer steubenHummer1
-_unit = steubenHummer1;
+// 	Engineer steuben8
+_unit = steuben8;
 
 removeAllWeapons _unit;
 
@@ -509,16 +509,16 @@ _unit addWeapon "ItemGPS";
 _unit addWeapon "ACE_Rucksack_MOLLE_DMARPAT";
 
 // DURCHLADEN
-reload steubenHummer1;
+reload steuben8;
 
-steubenHummer1Weapons = weapons steubenHummer1;
-steubenHummer1Magazines = magazines steubenHummer1;
+steubenHummer1Weapons = weapons steuben8;
+steubenHummer1Magazines = magazines steuben8;
 publicVariable "steubenHummer1Weapons";
 publicVariable "steubenHummer1Magazines";
 
 
-// 	Engineer steubenHummer2
-_unit = steubenHummer2;
+// 	Engineer steuben9
+_unit = steuben9;
 
 removeAllWeapons _unit;
 
@@ -562,10 +562,10 @@ _unit addWeapon "ItemGPS";
 _unit addWeapon "ACE_Rucksack_MOLLE_DMARPAT";
 
 // DURCHLADEN
-reload steubenHummer2;
+reload steuben9;
 
-steubenHummer2Weapons = weapons steubenHummer2;
-steubenHummer2Magazines = magazines steubenHummer2;
+steubenHummer2Weapons = weapons steuben9;
+steubenHummer2Magazines = magazines steuben9;
 publicVariable "steubenHummer2Weapons";
 publicVariable "steubenHummer2Magazines";
 
@@ -574,21 +574,21 @@ publicVariable "steuben2";
 publicVariable "steuben3";
 publicVariable "steuben4";
 publicVariable "steuben5";
-publicVariable "popadley";
-publicVariable "popadley2";
-publicVariable "steubenHummer1";
-publicVariable "steubenHummer2";
+publicVariable "steuben6";
+publicVariable "steuben7";
+publicVariable "steuben8";
+publicVariable "steuben9";
 
 {_x assignTeam "RED"} foreach [steuben2,steuben3,steuben4,steuben5];
-{_x assignTeam "GREEN"} foreach [popadley,popadley2];
-{_x assignTeam "BLUE"} foreach [steubenHummer1,steubenHummer2];
+{_x assignTeam "GREEN"} foreach [steuben6,steuben7];
+{_x assignTeam "BLUE"} foreach [steuben8,steuben9];
 
 
-popadley moveInDriver medevacVictor;
-popadley2 moveInCargo [medevacVictor, 0];
+steuben6 moveInDriver medevacVictor;
+steuben7 moveInCargo [medevacVictor, 0];
 
-steubenHummer1 moveInDriver utilityVictor;
-steubenHummer2 moveInCargo [utilityVictor, 0];
+steuben8 moveInDriver utilityVictor;
+steuben9 moveInCargo [utilityVictor, 0];
 
 {if (!isPlayer _x) then {doStop _x}} forEach units group player;
 
@@ -617,10 +617,10 @@ if (player == bbq) then {
 "ACE_USMC_Soldier_D" createUnit [getMarkerPos "bbqSpawn", bravo, "bbq4=this", 0.8, ""];
 "ACE_USMC_Soldier_GL_D" createUnit [getMarkerPos "bbqSpawn", bravo, "bbq5=this", 0.8, ""];
 
+"ACE_USMC_Soldier_D" createUnit [getMarkerPos "bbqSpawn", bravo, "bbq6=this", 0.6, ""];
+"ACE_USMC_Soldier_D" createUnit [getMarkerPos "bbqSpawn", bravo, "bbq7=this", 0.6, ""];
 "ACE_USMC_Soldier_D" createUnit [getMarkerPos "bbqSpawn", bravo, "bbq8=this", 0.6, ""];
 "ACE_USMC_Soldier_D" createUnit [getMarkerPos "bbqSpawn", bravo, "bbq9=this", 0.6, ""];
-"ACE_USMC_Soldier_D" createUnit [getMarkerPos "bbqSpawn", bravo, "bbqHummer1=this", 0.6, ""];
-"ACE_USMC_Soldier_D" createUnit [getMarkerPos "bbqSpawn", bravo, "bbqHummer2=this", 0.6, ""];
 
 waitUntil {({alive _x} count units bravo) == 9};
 
@@ -825,20 +825,229 @@ bbq5Magazines = magazines bbq5;
 publicVariable "bbq5Weapons";
 publicVariable "bbq5Magazines";
 
-//////////////
+// 	Crewman bbq6
+_unit = bbq6;
+
+removeAllWeapons _unit;
+
+// PRIMARY WEAPON MAGS / 12 slots (S) (zb stanag) / 6 slots (M) (zb betaC / smaw rocket)
+_unit addMagazine "ACE_20Rnd_762x51_T_SCAR";
+_unit addMagazine "ACE_20Rnd_762x51_T_SCAR";
+_unit addMagazine "ACE_20Rnd_762x51_T_SCAR";
+_unit addMagazine "ACE_20Rnd_762x51_T_SCAR";
+_unit addMagazine "ACE_20Rnd_762x51_T_SCAR";
+_unit addMagazine "ACE_20Rnd_762x51_T_SCAR";
+_unit addMagazine "ACE_20Rnd_762x51_T_SCAR";
+_unit addMagazine "ACE_20Rnd_762x51_T_SCAR";
+_unit addMagazine "ACE_20Rnd_762x51_T_SCAR";
+_unit addMagazine "ACE_20Rnd_762x51_T_SCAR";
+_unit addMagazine "ACE_20Rnd_762x51_T_SCAR";
+_unit addMagazine "ACE_20Rnd_762x51_T_SCAR";
+
+// PRIMARY WEAPON
+_unit addWeapon "SCAR_H_STD_EGLM_Spect";
+
+// SECONDARY WEAPON MAGS / 8 slots
+_unit addMagazine "1Rnd_HE_M203";
+_unit addMagazine "1Rnd_HE_M203";
+_unit addMagazine "1Rnd_HE_M203";
+_unit addMagazine "1Rnd_HE_M203";
+_unit addMagazine "1Rnd_HE_M203";
+_unit addMagazine "1Rnd_HE_M203";
+_unit addMagazine "1Rnd_HE_M203";
+_unit addMagazine "1Rnd_HE_M203";
+
+// SECONDARY WEAPON
+//_unit addWeapon "glock17_EP1";
+
+// EQUIPMENT
+_unit addWeapon "Binocular";
+_unit addWeapon "NVGoggles";
+_unit addWeapon "ACE_Earplugs";
+_unit addWeapon "ItemGPS";
+
+// RUCK
+_unit addWeapon "ACE_Backpack_US";
+
+// DURCHLADEN
+reload bbq6;
+
+bbq6Weapons = weapons bbq6;
+bbq6Magazines = magazines bbq6;
+publicVariable "bbq6Weapons";
+publicVariable "bbq6Magazines";
+
+// 	Crewman bbq7
+_unit = bbq7;
+
+removeAllWeapons _unit;
+
+// PRIMARY WEAPON MAGS / 12 slots (S) (zb stanag) / 6 slots (M) (zb betaC / smaw rocket)
+_unit addMagazine "ACE_20Rnd_762x51_T_SCAR";
+_unit addMagazine "ACE_20Rnd_762x51_T_SCAR";
+_unit addMagazine "ACE_20Rnd_762x51_T_SCAR";
+_unit addMagazine "ACE_20Rnd_762x51_T_SCAR";
+_unit addMagazine "ACE_20Rnd_762x51_T_SCAR";
+_unit addMagazine "ACE_20Rnd_762x51_T_SCAR";
+_unit addMagazine "ACE_20Rnd_762x51_T_SCAR";
+_unit addMagazine "ACE_20Rnd_762x51_T_SCAR";
+_unit addMagazine "ACE_20Rnd_762x51_T_SCAR";
+_unit addMagazine "ACE_20Rnd_762x51_T_SCAR";
+_unit addMagazine "ACE_20Rnd_762x51_T_SCAR";
+_unit addMagazine "ACE_20Rnd_762x51_T_SCAR";
+
+// PRIMARY WEAPON
+_unit addWeapon "SCAR_H_STD_EGLM_Spect";
+
+// SECONDARY WEAPON MAGS / 8 slots
+_unit addMagazine "1Rnd_HE_M203";
+_unit addMagazine "1Rnd_HE_M203";
+_unit addMagazine "1Rnd_HE_M203";
+_unit addMagazine "1Rnd_HE_M203";
+_unit addMagazine "1Rnd_HE_M203";
+_unit addMagazine "1Rnd_HE_M203";
+_unit addMagazine "1Rnd_HE_M203";
+_unit addMagazine "1Rnd_HE_M203";
+
+// SECONDARY WEAPON
+//_unit addWeapon "glock17_EP1";
+
+// EQUIPMENT
+_unit addWeapon "Binocular";
+_unit addWeapon "NVGoggles";
+_unit addWeapon "ACE_Earplugs";
+_unit addWeapon "ItemGPS";
+
+// RUCK
+_unit addWeapon "ACE_Backpack_US";
+
+// DURCHLADEN
+reload bbq7;
+
+bbq7Weapons = weapons bbq7;
+bbq7Magazines = magazines bbq7;
+publicVariable "bbq7Weapons";
+publicVariable "bbq7Magazines";
+
+// 	Crewman bbq8
+_unit = bbq8;
+
+removeAllWeapons _unit;
+
+// PRIMARY WEAPON MAGS / 12 slots (S) (zb stanag) / 6 slots (M) (zb betaC / smaw rocket)
+_unit addMagazine "ACE_20Rnd_762x51_T_SCAR";
+_unit addMagazine "ACE_20Rnd_762x51_T_SCAR";
+_unit addMagazine "ACE_20Rnd_762x51_T_SCAR";
+_unit addMagazine "ACE_20Rnd_762x51_T_SCAR";
+_unit addMagazine "ACE_20Rnd_762x51_T_SCAR";
+_unit addMagazine "ACE_20Rnd_762x51_T_SCAR";
+_unit addMagazine "ACE_20Rnd_762x51_T_SCAR";
+_unit addMagazine "ACE_20Rnd_762x51_T_SCAR";
+_unit addMagazine "ACE_20Rnd_762x51_T_SCAR";
+_unit addMagazine "ACE_20Rnd_762x51_T_SCAR";
+_unit addMagazine "ACE_20Rnd_762x51_T_SCAR";
+_unit addMagazine "ACE_20Rnd_762x51_T_SCAR";
+
+// PRIMARY WEAPON
+_unit addWeapon "SCAR_H_STD_EGLM_Spect";
+
+// SECONDARY WEAPON MAGS / 8 slots
+_unit addMagazine "1Rnd_HE_M203";
+_unit addMagazine "1Rnd_HE_M203";
+_unit addMagazine "1Rnd_HE_M203";
+_unit addMagazine "1Rnd_HE_M203";
+_unit addMagazine "1Rnd_HE_M203";
+_unit addMagazine "1Rnd_HE_M203";
+_unit addMagazine "1Rnd_HE_M203";
+_unit addMagazine "1Rnd_HE_M203";
+
+// SECONDARY WEAPON
+//_unit addWeapon "glock17_EP1";
+
+// EQUIPMENT
+_unit addWeapon "Binocular";
+_unit addWeapon "NVGoggles";
+_unit addWeapon "ACE_Earplugs";
+_unit addWeapon "ItemGPS";
+
+// RUCK
+_unit addWeapon "ACE_Backpack_US";
+
+// DURCHLADEN
+reload bbq8;
+
+bbq8Weapons = weapons bbq8;
+bbq8Magazines = magazines bbq8;
+publicVariable "bbq8Weapons";
+publicVariable "bbq8Magazines";
+
+// 	Crewman bbq9
+_unit = bbq9;
+
+removeAllWeapons _unit;
+
+// PRIMARY WEAPON MAGS / 12 slots (S) (zb stanag) / 6 slots (M) (zb betaC / smaw rocket)
+_unit addMagazine "ACE_20Rnd_762x51_T_SCAR";
+_unit addMagazine "ACE_20Rnd_762x51_T_SCAR";
+_unit addMagazine "ACE_20Rnd_762x51_T_SCAR";
+_unit addMagazine "ACE_20Rnd_762x51_T_SCAR";
+_unit addMagazine "ACE_20Rnd_762x51_T_SCAR";
+_unit addMagazine "ACE_20Rnd_762x51_T_SCAR";
+_unit addMagazine "ACE_20Rnd_762x51_T_SCAR";
+_unit addMagazine "ACE_20Rnd_762x51_T_SCAR";
+_unit addMagazine "ACE_20Rnd_762x51_T_SCAR";
+_unit addMagazine "ACE_20Rnd_762x51_T_SCAR";
+_unit addMagazine "ACE_20Rnd_762x51_T_SCAR";
+_unit addMagazine "ACE_20Rnd_762x51_T_SCAR";
+
+// PRIMARY WEAPON
+_unit addWeapon "SCAR_H_STD_EGLM_Spect";
+
+// SECONDARY WEAPON MAGS / 8 slots
+_unit addMagazine "1Rnd_HE_M203";
+_unit addMagazine "1Rnd_HE_M203";
+_unit addMagazine "1Rnd_HE_M203";
+_unit addMagazine "1Rnd_HE_M203";
+_unit addMagazine "1Rnd_HE_M203";
+_unit addMagazine "1Rnd_HE_M203";
+_unit addMagazine "1Rnd_HE_M203";
+_unit addMagazine "1Rnd_HE_M203";
+
+// SECONDARY WEAPON
+//_unit addWeapon "glock17_EP1";
+
+// EQUIPMENT
+_unit addWeapon "Binocular";
+_unit addWeapon "NVGoggles";
+_unit addWeapon "ACE_Earplugs";
+_unit addWeapon "ItemGPS";
+
+// RUCK
+_unit addWeapon "ACE_Backpack_US";
+
+// DURCHLADEN
+reload bbq9;
+
+bbq8Weapons = weapons bbq9;
+bbq8Magazines = magazines bbq9;
+publicVariable "bbq9Weapons";
+publicVariable "bbq9Magazines";
+
+/////////////////////////////////////////////////
+////////////////////////////////////////////////
 
 publicVariable "bbq2";
 publicVariable "bbq3";
 publicVariable "bbq4";
 publicVariable "bbq5";
+publicVariable "bbq6";
+publicVariable "bbq7";
 publicVariable "bbq8";
 publicVariable "bbq9";
-publicVariable "bbqHummer1";
-publicVariable "bbqHummer2";
 
 {_x assignTeam "BLUE"} foreach [bbq2,bbq3,bbq4,bbq5];
-{_x assignTeam "RED"} foreach [bbq8,bbq9];
-{_x assignTeam "YELLOW"} foreach [bbqHummer1,bbqHummer2];
+{_x assignTeam "RED"} foreach [bbq6,bbq7];
+{_x assignTeam "YELLOW"} foreach [bbq8,bbq9];
 
 {if (!isPlayer _x) then {doStop _x}} forEach units group player;
 
@@ -851,11 +1060,11 @@ bbq3 moveInCargo [leadVictor, 5];
 bbq4 moveInCargo [leadVictor, 6];
 bbq5 moveInCargo [leadVictor, 7];
 
-bbq8 moveInDriver hummvee1;
-bbq9 moveInGunner hummvee1;
+bbq6 moveInDriver hummvee1;
+bbq7 moveInGunner hummvee1;
 
-bbqHummer1 moveInDriver hummvee2;
-bbqHummer2 moveInGunner hummvee2;
+bbq8 moveInDriver hummvee2;
+bbq9 moveInGunner hummvee2;
 
 gnrf_initCounter = gnrf_initCounter + 1;
 publicVariable "gnrf_initCounter";

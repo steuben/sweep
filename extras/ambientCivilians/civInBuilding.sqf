@@ -10,16 +10,25 @@ _unit = gnrf_currentCivUnit;
 gnrf_currentCivUnit = nil;
 gnrf_civUnits set [count gnrf_civUnits, _unit];
 _unit setPos _targetPos; 
+_unit allowFleeing 0;
 _unit setVariable ["roles", ["housed"], true];
+
 while {alive _unit} do 
 {	
 	_targetPos = _building call BIS_fnc_selectRandom;
-	_distance = _unit distance _targetPos;
-	_tick = _distance / 5;
 	_unit doMove _targetPos; 
 	_unit forceSpeed 1;
-	waitUntil {sleep _tick; (_unit distance _targetPos) < 1}; 
+	
+	waitUntil 
+	{
+		_distance = _unit distance _targetPos;
+		_tick = _distance / 5;
+		sleep _tick;
+		_distance < 1;
+	}; 
+	
 	doStop _unit;
+	_unit forceSpeed 0;
 	_rnd = random 40;
 	sleep _rnd;
 };

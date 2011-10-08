@@ -42,25 +42,25 @@ if (!alive steuben5) then {
 	"ACE_USMC_Soldier_GL_D" createUnit [_spawnPos, alpha, "steuben5=this", 0.8, ""];
 };
 
-if (!alive popadley) then {
-	"ACE_USMC_Soldier_Medic_D" createUnit [_spawnPos, alpha, "popadley=this", 0.6, ""];
+if (!alive steuben6) then {
+	"ACE_USMC_Soldier_Medic_D" createUnit [_spawnPos, alpha, "steuben6=this", 0.6, ""];
 };
 
-if (!alive popadley2) then {
-	"ACE_USMC_Soldier_Medic_D" createUnit [_spawnPos, alpha, "popadley2=this", 0.6, ""];
+if (!alive steuben7) then {
+	"ACE_USMC_Soldier_Medic_D" createUnit [_spawnPos, alpha, "steuben7=this", 0.6, ""];
 };
 
-if (!alive steubenHummer1) then {
-	"ACE_USMC_SoldierS_Engineer_D" createUnit [_spawnPos, alpha, "steubenHummer1=this", 0.6, ""];
+if (!alive steuben8) then {
+	"ACE_USMC_SoldierS_Engineer_D" createUnit [_spawnPos, alpha, "steuben8=this", 0.6, ""];
 };
 
-if (!alive steubenHummer2) then {
-	"ACE_USMC_SoldierS_Engineer_D" createUnit [_spawnPos, alpha, "steubenHummer2=this", 0.6, ""];
+if (!alive steuben9) then {
+	"ACE_USMC_SoldierS_Engineer_D" createUnit [_spawnPos, alpha, "steuben9=this", 0.6, ""];
 };
 
 {_x assignTeam "RED"} foreach [steuben2,steuben3,steuben4,steuben5];
-{_x assignTeam "GREEN"} foreach [popadley,popadley2];
-{_x assignTeam "BLUE"} foreach [steubenHummer1,steubenHummer2];
+{_x assignTeam "GREEN"} foreach [steuben6,steuben7];
+{_x assignTeam "BLUE"} foreach [steuben8,steuben9];
 
 };
 
@@ -86,25 +86,25 @@ if (!alive bbq5) then {
 	"ACE_USMC_Soldier_GL_D" createUnit [_spawnPos, bravo, "bbq5=this", 0.8, ""];
 };
 
-if ((!alive bbq8) AND (getdammage hummvee1 < 0.9)) then {
+if ((!alive bbq6) AND (getdammage hummvee1 < 0.9)) then {
+	"ACE_USMC_Soldier_D" createUnit [_spawnPos, bravo, "bbq6=this", 0.6, ""];
+};
+
+if ((!alive bbq7) AND (getdammage hummvee1 < 0.9)) then {
+	"ACE_USMC_Soldier_D" createUnit [_spawnPos, bravo, "bbq7=this", 0.6, ""];
+};
+
+if ((!alive bbq8) AND (getdammage hummvee2 < 0.9)) then {
 	"ACE_USMC_Soldier_D" createUnit [_spawnPos, bravo, "bbq8=this", 0.6, ""];
 };
 
-if ((!alive bbq9) AND (getdammage hummvee1 < 0.9)) then {
+if ((!alive bbq9) AND (getdammage hummvee2 < 0.9)) then {
 	"ACE_USMC_Soldier_D" createUnit [_spawnPos, bravo, "bbq9=this", 0.6, ""];
 };
 
-if ((!alive bbqHummer1) AND (getdammage hummvee2 < 0.9)) then {
-	"ACE_USMC_Soldier_D" createUnit [_spawnPos, bravo, "bbqHummer1=this", 0.6, ""];
-};
-
-if ((!alive bbqHummer2) AND (getdammage hummvee2 < 0.9)) then {
-	"ACE_USMC_Soldier_D" createUnit [_spawnPos, bravo, "bbqHummer2=this", 0.6, ""];
-};
-
 {_x assignTeam "BLUE"} foreach [bbq2,bbq3,bbq4,bbq5];
-{_x assignTeam "RED"} foreach [bbq8,bbq9];
-{_x assignTeam "YELLOW"} foreach [bbqHummer1,bbqHummer2];
+{_x assignTeam "RED"} foreach [bbq6,bbq7];
+{_x assignTeam "YELLOW"} foreach [bbq8,bbq9];
 
 };
 
@@ -125,17 +125,17 @@ medevacVictor setFuel 1;
 
 
 if ( canMove hummvee1) then {
-bbq8 moveInDriver hummvee1;
-bbq9 moveInGunner hummvee1;
+bbq6 moveInDriver hummvee1;
+bbq7 moveInGunner hummvee1;
 };
 
 if ( canMove hummvee2) then {
-bbqHummer1 moveInDriver hummvee2;
-bbqHummer2 moveInGunner hummvee2;
+bbq8 moveInDriver hummvee2;
+bbq9 moveInGunner hummvee2;
 };
 
 // rearm team
-for "_i" from 2 to 5 do {
+for "_i" from 2 to 9 do {
 
 	_unit = str(player) + str(_i);
 	

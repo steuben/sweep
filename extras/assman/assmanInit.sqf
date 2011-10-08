@@ -1,6 +1,6 @@
 
 
-assmanStart = true;
+assmanStart = false;
 publicVariable "assmanStart";
 
 //dialog test
@@ -9,7 +9,7 @@ publicVariable "assmanStart";
 	gnrf_UI = true;
 	_ok = createDialog "uiAssmanStart";
 	
-}],0,false,false,"","isNil 'gnrf_UI'"];*/
+}],0,false,false,"","isNil 'gnrf_UI'"];
 
 _newDialog_act= steuben addAction [("<t color=""#FF3300"">" + ("ASSMAN") + "</t>"),"gen_action.sqf",[{
 
@@ -25,6 +25,6 @@ _newDialog_act= bbq addAction [("<t color=""#FF3300"">" + ("ASSMAN") + "</t>"),"
 	
 }],0,false,false,"","isNil 'gnrf_UI'"];
 
-
+*/
 
 

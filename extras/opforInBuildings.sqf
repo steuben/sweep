@@ -8,14 +8,13 @@
 		_spawnPos = [_spawnPos select 0, _spawnPos select 1, 0];
 		_spawnPos = _spawnPos findEmptyPosition [1,20, "Man"];
 		
-		// GROUP
+		//groups
 		_opforSet1 = createGroup EAST;
 		_opforSet2 = createGroup EAST;
 		_opforSet3 = createGroup EAST;
-		// UNITS
-
+		
 		////defending group
-		// Group Leader
+		// Leader
 		_createUnit="ACE_RU_Soldier_Officer_D" createUnit [_spawnPos, _opforSet1, "", 9, "Sergeant"];
 
 		// Marksman
@@ -85,19 +84,31 @@
 		_staticMG2 setVehicleAmmo 0;
 		{_staticMG2 addMagazine _mag} forEach [1,2,3,4];		
 		
+		//set AI behaviour
 		_opforSet1 enableAttack false;
 		_opforSet2 setCombatMode "RED";
-				
-		//////add Killed EH´s
+		
+		//sort units
 		_allUnits = (units _opforSet1) + (units _opforSet2) + (units _opforSet3);
 		_mostUnits = (units _opforSet1) + (units _opforSet2);
+		
+		//add Killed EH´s
 		{_x addMPEventhandler ["MPKilled", "if (isServer) then {_this select 0 removeAllEventHandlers 'MPkilled'; [_this select 0, _this select 1] spawn killDetector_compiled;}"];} forEach _allUnits;
 		
-		{[_x] spawn gnrf_moveInBuilding_fnc} forEach _mostUnits;
-		waitUntil {sleep 1.23; ({alive _x} count _allUnits) < 1};
+		//stop units from fleeing
+		{_x allowFleeing 0} forEach _allUnits; 
 		
+		//movment script
+		{[_x] spawn gnrf_moveInBuilding_fnc} forEach _mostUnits;
+		
+		//check if building is cleared
+		waitUntil {sleep 1.23; ({alive _x} count _allUnits) < 1};		
 		[-1, {titleText ["Building Cleared", "PLAIN"]}] call CBA_fnc_globalExecute;	
+		
+		//reinforce / reset /repair
 		[] execVM "loadout\reinforcement.sqf";
 		grnf_villaIsTriggered = nil;
+		_building = _spawnPos nearestObject "Building";
+		_building setDamage 0;
 
 		
