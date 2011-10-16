@@ -12,3 +12,8 @@ player addEventHandler ["killed",
 		[] spawn gnrf_playerRespawn_fnc;			
 	};	
 }];
+
+//fired near player
+player addEventhandler ["FiredNear", {[_this select 0] spawn grnf_firedNearPlayer_fnc}];
+
+

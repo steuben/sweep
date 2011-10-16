@@ -37,22 +37,11 @@ _weapons = player getVariable "weapons";
 reload player;
 
 //re-attach helper arrow
-[-1, 
+if ((paramsArray select 6) == 1) then 
 {
-	_dude = _this;
-	if ((_dude != player) AND (!isNil "gnrf_helperArrow")) then 
-	{
-		_array = gnrf_players - [player];
-		if ((count _array) < 1) exitWith {};
-		_target = _array select 0;
-		gnrf_helperArrow attachTo [_dude, [0,0,4]];
-	};
-
-}, player] call CBA_fnc_globalExecute;
+	_dude = player;
+	["gnrf_addHelperArrow", _dude] call CBA_fnc_remoteEvent;
+};
 
 //re-add debug actions 
-if (debugModeOn) then {[] spawn gnrf_addDebugOptions_fnc};
-
-//make player name public - test
-if (player == steuben) then {publicVariable "steuben"};
-if (player == bbq) then {publicVariable "bbq"};
+if ((debugModeOn) OR (!isNil "gnrf_debugCalledOnce")) then {[] spawn gnrf_addDebugOptions_fnc};

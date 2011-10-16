@@ -1,15 +1,18 @@
 //////client//////
 if (!isDedicated) then {
 
-	//////functions precompiled
+	//////client functions precompiled
+	gnrf_playerRespawn_fnc = compile preProcessFileLineNumbers "client\functions\respawn.sqf";
 	grnf_getDisplayName_fnc = compile preProcessFileLineNumbers "client\functions\getDisplayName.sqf";
 	grnf_firedNearPlayer_fnc = compile preProcessFileLineNumbers "extras\ambientCivilians\handleFiredNear.sqf";
 	grnf_addActions_fnc = compile preProcessFileLineNumbers "client\actions.sqf";
 	grnf_keyHandling_fnc = compile preProcessFileLineNumbers "client\functions\keyHandling.sqf";
+	grnf_helperArrow_fnc = compile preProcessFileLineNumbers "client\functions\helperArrow.sqf";
 
 	
 	//////scripts
 	if ((paramsArray select 0) == 1) then {[] execVM "debug\debugMode.sqf"};
+	[] execVM "client\XeventHandlers.sqf";
 	[] execVM "extras\atv\initATV.sqf";
 	[] execVM "extras\supportSquad\supportSquadInit.sqf";
 	[] execVM "extras\surveillance\revealUnits.sqf";
@@ -21,7 +24,6 @@ if (!isDedicated) then {
 	[] spawn _fnc_debugRank;
 	[] execVM "extras\CoIn\CoIn.sqf";
 	[] execVM "extras\freezeTime.sqf";
-	if ((paramsArray select 6) == 1) then {[] execVM "extras\helperArrow.sqf"};
 	[] execVM "client\eventHandlers.sqf";
 
 //////triggers
@@ -94,8 +96,7 @@ gnrf_baconStreets = [[3543.13,4205.88,22.6402],[3596.47,4369.3,17.7876],[3592.25
 gnrf_globalStreets = gnrf_omahaStreets + gnrf_golemStreets + gnrf_falafelStreets + gnrf_pantiesStreets + gnrf_mushroomStreets + gnrf_baconStreets;
 
 
-//////client functions precompiled
-gnrf_playerRespawn_fnc = compile preProcessFileLineNumbers "loadout\respawn.sqf";
+
 
 ///////////////ab hier Server only//////////////////
 

@@ -11,12 +11,11 @@ _nearCivs = [];
 
 {
 	_roles = _x getVariable "roles";
-	if (!(_x in gnrf_scaredCivs) AND ("onFoot" in _roles) AND !("zpd" in _roles) AND !("housed" in _roles)) then {_nearCivs set [count _nearCivs, _x]};
+	if ((_x in gnrf_MovingCivs) AND ("onFoot" in _roles) AND !("zpd" in _roles) AND !("housed" in _roles)) then {_nearCivs set [count _nearCivs, _x]};
 } forEach gnrf_nearCivs;
 
 [0, {{[_x] spawn gnrf_fleeIntoBuilding_fnc} forEach _this}, _nearCivs] call CBA_fnc_globalExecute;
 
-gnrf_scaredCivs = gnrf_scaredCivs + _nearCivs;
 sleep 5;
 gnrf_nearCivs = nil;
 gnrf_scaringCivs = nil;

@@ -408,10 +408,10 @@ _unit addWeapon "ACE_Rucksack_MOLLE_Green_Medic";
 // DURCHLADEN
 reload steuben6;
 
-popadleyWeapons = weapons steuben6;
-popadleyMagazines = magazines steuben6;
-publicVariable "popadleyWeapons";
-publicVariable "popadleyMagazines";
+steuben6Weapons = weapons steuben6;
+steuben6Magazines = magazines steuben6;
+publicVariable "steuben6Weapons";
+publicVariable "steuben6Magazines";
 
 
 // 	Medic steuben7
@@ -458,10 +458,10 @@ _unit addWeapon "ACE_Rucksack_MOLLE_Green_Medic";
 // DURCHLADEN
 reload steuben7;
 
-popadley2Weapons = weapons steuben7;
-popadley2Magazines = magazines steuben7;
-publicVariable "popadley2Weapons";
-publicVariable "popadley2Magazines";
+steuben7Weapons = weapons steuben7;
+steuben7Magazines = magazines steuben7;
+publicVariable "steuben7Weapons";
+publicVariable "steuben7Magazines";
 
 
 // 	Engineer steuben8
@@ -511,10 +511,10 @@ _unit addWeapon "ACE_Rucksack_MOLLE_DMARPAT";
 // DURCHLADEN
 reload steuben8;
 
-steubenHummer1Weapons = weapons steuben8;
-steubenHummer1Magazines = magazines steuben8;
-publicVariable "steubenHummer1Weapons";
-publicVariable "steubenHummer1Magazines";
+steuben8Weapons = weapons steuben8;
+steuben8Magazines = magazines steuben8;
+publicVariable "steuben8Weapons";
+publicVariable "steuben8Magazines";
 
 
 // 	Engineer steuben9
@@ -564,10 +564,10 @@ _unit addWeapon "ACE_Rucksack_MOLLE_DMARPAT";
 // DURCHLADEN
 reload steuben9;
 
-steubenHummer2Weapons = weapons steuben9;
-steubenHummer2Magazines = magazines steuben9;
-publicVariable "steubenHummer2Weapons";
-publicVariable "steubenHummer2Magazines";
+steuben9Weapons = weapons steuben9;
+steuben9Magazines = magazines steuben9;
+publicVariable "steuben9Weapons";
+publicVariable "steuben9Magazines";
 
 ////////////////
 publicVariable "steuben2";
@@ -1028,8 +1028,8 @@ _unit addWeapon "ACE_Backpack_US";
 // DURCHLADEN
 reload bbq9;
 
-bbq8Weapons = weapons bbq9;
-bbq8Magazines = magazines bbq9;
+bbq9Weapons = weapons bbq9;
+bbq9Magazines = magazines bbq9;
 publicVariable "bbq9Weapons";
 publicVariable "bbq9Magazines";
 
@@ -1052,7 +1052,6 @@ publicVariable "bbq9";
 {if (!isPlayer _x) then {doStop _x}} forEach units group player;
 
 [0, {{_x addMPEventhandler ["MPKilled", "if (isServer) then {[_this select 0, _this select 1] spawn killDetector_compiled}"]} forEach units group bbq;}] call CBA_fnc_globalExecute;
-bbq addEventhandler ["FiredNear", {[_this select 0] spawn grnf_firedNearPlayer_fnc}];
 
 //units get in
 bbq2 moveInCargo [leadVictor, 4];
@@ -1078,5 +1077,12 @@ player setVariable ["weapons", weapons player];
 gnrf_respawnInfo = [];
 gnrf_respawnInfo set [0, [medevacVictor, 10]]; //add respawn pos - players always spawn at the nearest spawnpos. parameters: 
 gnrf_respawnInfo set [1, [[4057.44,3189.92,16.9818], 0]]; //[[position] OR global object name for dynamic position, offset (radius in m, 0 for exact positioning)]
-publicVariable "gnrf_respawnInfo"; 		 
+publicVariable "gnrf_respawnInfo"; 		
+
+//attach helper arrow
+if ((paramsArray select 6) == 1) then 
+{
+	_dude = player;
+	["gnrf_addHelperArrow", _dude] call CBA_fnc_remoteEvent;
+}; 
 

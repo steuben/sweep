@@ -4,10 +4,10 @@
 	
 	_unit = _this select 0; 	
 	if (!(_unit in gnrf_movingCivs)) exitWith {};
-	
-	_targetPos = [_unit, gnrf_allBuildings1st] call CBA_fnc_getNearest;
-		
 	gnrf_movingCivs = gnrf_movingCivs - [_unit];
+	
+	_targetPos = [_unit, gnrf_allBuildings1st] call CBA_fnc_getNearest;		
+	
 	doStop _unit;
 	_unit domove (_targetPos); 
 	_unit forceSpeed 100;		
@@ -19,7 +19,6 @@
 	_unit enableAI "MOVE"; 
 	_unit forceSpeed 1;
 	_unit setUnitPos "UP";
-	gnrf_scaredCivs = gnrf_scaredCivs - [_unit];
 	gnrf_movingCivs = gnrf_movingCivs + [_unit];
 	
 	
