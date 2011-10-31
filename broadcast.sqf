@@ -56,21 +56,6 @@ switch (_this select 0) do {
 		initPanties_spawn = [] spawn initPanties_compiled;	
 	};
 	
-	case "counterAttack" : {		
-
-		titleText ["Enemy Forces Advancing On Zargabad From The North.", "PLAIN"];
-		sleep 2;
-		major sideChat "All GHOSTRIDER units, be advised.";
-		major sideChat "Russian Forces have massed up on the northern flank.";
-		sleep 4;
-		major sideChat "Expect a fierce combined arms assault, there are multiple armor units in support of a company sized Mech.Inf. Element approaching Hazar Bagh.";
-		sleep 4;
-		major sideChat "Hold the line! The City you just fucked up is counting on you now. Hammer out.";
-
-	    broadcast = nil;
-
-	};
-	
 };
 
 

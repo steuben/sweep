@@ -40,42 +40,11 @@ _pos = [3972.88,4647.61,37.1893];
 gnrf_drebinOfficer = _grp createUnit ["USMC_Soldier_Officer", [0,0,0], [], 10, "FORM"];
 gnrf_drebinOfficer setPosASL _pos;
 gnrf_drebinOfficer setGroupId ["2nd-Platoon-PC"];
+publicVariable "gnrf_drebinOfficer";
 
-//create squad leader
-_pos = [3996.99,4678.08,32.5943];
-_squadLeader = _grp createUnit ["USMC_Soldier_SL", [0,0,0], [], 10, "FORM"];
-_squadLeader setPosASL _pos;
-_squadLeader setGroupId ["2nd-Platoon-PC"];
+["gnrf_clientExecute", [[], "spawn", "gnrf_counterAttack_Act"]] call CBA_fnc_globalEvent;
 
-
-// call counter attack action
-[-1, {
-
-gnrf_counterAttack_Act = gnrf_drebinOfficer addAction [("<t color=""#1F67CC"">" + ("Get new orders") + "</t>"),"gen_action.sqf",[{
-
-	if (!isNil "gnrf_CAcalled") exitWith {};
-	gnrf_CAcalled = true;
-	publicVariable "gnrf_CAcalled";
-	[0, {[] execVM "extras\opforAssault\assaultInit.sqf";}] call CBA_fnc_globalExecute;
-
-	broadcast = "counterAttack";
-	publicVariable "broadcast";
-	broadcast = nil;
-
-	titleText ["Enemy Forces Advancing On Zargabad From The North.", "PLAIN"];
-	sleep 2;
-	major sideChat "All GHOSTRIDER units, be advised.";
-	major sideChat "Russian Forces have massed up on the northern flank.";
-	sleep 4;
-	major sideChat "Expect a fierce combined arms assault, there are multiple armor units in support of a company sized Mech.Inf. Element approaching Hazar Bagh.";
-	sleep 4;
-	major sideChat "Hold the line! The City you just fucked up is counting on you now. Hammer out.";
-
-}],0,true,true,"","isNil 'gnrf_CAcalled'"];
-
-}] call CBA_fnc_globalExecute;
-
-[-1, {titleText ["Receiver new orders at the baracks", "PLAIN"];}] call CBA_fnc_globalExecute;
+[-1, {titleText ["Receive new orders at the barracks", "PLAIN"];}] call CBA_fnc_globalExecute;
 
 
 

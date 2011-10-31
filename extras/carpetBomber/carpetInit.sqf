@@ -9,7 +9,7 @@ publicVariable "echoCaller";
 echoReady = false;
 publicVariable "echoReady";
 alphaKlicked = false; // klicked has to be global for some reason..
-openMap true;
+if (!visibleMap) then {openMap true};
 
 titleText ["Please define a vector with two map klicks to set the bombardement direction.", "PLAIN DOWN"];
  

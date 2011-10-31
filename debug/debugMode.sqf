@@ -23,10 +23,10 @@ If ((paramsArray select 0) == 1) then
 //initiate var´s
 gnrf_debug_posArray = [];
 
+gnrf_addDebugOptions_fnc = {
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ////// simple addActions - Parameters passed to the code being executed are: [target, caller, ActionID, customParam]//////
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-gnrf_addDebugOptions_fnc = {
 
 //show debugOptions
 _debugMenu_act = player addAction [("<t color=""#4693FF"">" + ("Debug Options") + "</t>"),"gen_action.sqf",[{	
@@ -49,6 +49,14 @@ _testCode_act = player addAction [("<t color=""#1F67CC"">" + ("Test Code") + "</
 	call compile _string;
 	
 }],0,false, false,"","gnrf_debugMenu AND debugModeOn"];
+
+//teleport
+_teleport_act = player addAction ["<t color=""#1F67CC"">Teleport</t>","gen_action.sqf",[{	
+	gnrf_teleportInUse = true;
+	if (!visibleMap) then {openMap true};
+	titleText ["Click on map to teleport", "PLAIN DOWN"];
+	onMapSingleClick "onMapSingleClick''; player setPos _pos; openMap false; gnrf_teleportInUse = nil; true;";
+}],0,false,true,"","(isNil 'gnrf_teleportInUse') AND (gnrf_debugMenu) AND debugModeOn"];
 
 //get building positions
 _getBuildingPos_act = player addAction [("<t color=""#1F67CC"">" + ("Get Building Positions") + "</t>"),"gen_action.sqf",[{
@@ -119,7 +127,7 @@ _clearPos_act = player addAction [("<t color=""#1F67CC"">" + ("Clear All Positio
 _coordMode_act = player addAction [("<t color=""#1F67CC"">" + ("Save Map Pos") + "</t>"),"gen_action.sqf",[{	
 	gnrf_debugCoords = true;
 	gnrf_debug_posArray = [];
-	openMap true;
+	if (!visibleMap) then {openMap true};
 	titleText ["Click on map to copy target coordinates to clipboard", "PLAIN DOWN"];
 	onMapSingleClick "
 	if ((_pos select 2) < 0) then {_pos = [_pos select 0, _pos select 1, abs(_pos select 2)]}; 
@@ -161,14 +169,6 @@ _debugPortToBomberman_act = player addAction [("<t color=""#1F67CC"">" + ("Debug
 //	player moveInCargo vehicle gnrf_testBomberman;
 	
 }],0,false,true,"","(gnrf_debugMenu) AND (isNil 'gnrf_debugBomberman') AND debugModeOn"];
-
-//map teleport
-_teleport_act = player addAction ["<t color=""#1F67CC"">Teleport</t>","gen_action.sqf",[{	
-	gnrf_teleportInUse = true;
-	openMap true;
-	titleText ["Click on map to teleport", "PLAIN DOWN"];
-	onMapSingleClick "onMapSingleClick''; {_x setPos [(_pos select 0)+round(random 5), (_pos select 1)+round(random 5), 0]} forEach units group player; gnrf_teleportInUse = nil; true;";
-}],0,false,true,"","(isNil 'gnrf_teleportInUse') AND (gnrf_debugMenu) AND debugModeOn"];
 
 //board carpetbomber
 _getInEcho_act = player addAction [("<t color=""#1F67CC"">" + ("Board Echoplane") + "</t>"),"gen_action.sqf",[{
@@ -237,6 +237,13 @@ _newSectorInit_act= player addAction [("<t color=""#ff0000"">" + ("New Sector In
 [] execVM "sectors\initSector.sqf";
 }],0,false,true,"","gnrf_showSectorDebug AND debugModeOn"];	
 
+//restart Villa
+_villa_act = player addAction [("<t color=""#ff0000"">" + ("Restart Villa") + "</t>"),"gen_action.sqf",[{
+	
+	[0, {[[4850.7,4599.94,0]] execVM "extras\opforInBuildings.sqf";}] call CBA_fnc_globalExecute;
+	
+}],0,false, false,"","!isNil 'gnrf_villaRepeat' AND isNil 'grnf_villaIsTriggered' AND debugModeOn"];
+
 
 ////////////////add player actions above/////////////////////////////////////////////////////////////
 };
@@ -249,7 +256,7 @@ gnrf_heli_teleport = {
 
 gnrf_heli_teleport_act = blackhawk addAction [("<t color=""#1F67CC"">" + ("Teleport") + "</t>"),"gen_action.sqf",[{	
 	titleText ["Click on map to teleport", "PLAIN DOWN"];
-	openMap true;
+	if (!visibleMap) then {openMap true};
 	gnrf_heliPortKlicked = false;
 	onMapSingleClick "onMapSingleClick''; blackhawk setPos [_pos select 0, _pos select 1, 150]; gnrf_heliPortKlicked = true";
 	waitUntil {gnrf_heliPortKlicked};

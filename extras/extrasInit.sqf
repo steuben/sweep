@@ -63,7 +63,7 @@ _trg3 setTriggerStatements["this", "broadcast = 'stats'; publicVariable 'broadca
 	//villa
 _trg4 = createTrigger["EmptyDetector", [4875,4605,0]]; 
 _trg4 setTriggerArea[120,120,0,false]; 
-_trg4 setTriggerActivation["WEST","PRESENT",true]; 
+_trg4 setTriggerActivation["WEST","PRESENT",false]; 
 _trg4 setTriggerStatements["this AND ((player in thisList) OR (vehicle player in thisList))", "[0, {[[4850.7,4599.94,0]] execVM 'extras\opforInBuildings.sqf';}] call CBA_fnc_globalExecute;", ""]; 
 
 //////markers

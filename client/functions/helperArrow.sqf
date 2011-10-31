@@ -1,4 +1,4 @@
-
+if (isDedicated) exitWith {};
 private ["_target", "_inVehicle"];
 
 _target = _this;
@@ -11,7 +11,7 @@ while {alive _target} do
 {
 	if ((vehicle _target != _target) AND (!_inVehicle)) then 
 	{
-		_helperArrow attachTo [vehicle _target];
+		_helperArrow attachTo [vehicle _target, [0,0,5]];
 		_inVehicle = true;
 	};
 

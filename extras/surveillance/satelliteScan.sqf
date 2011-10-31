@@ -4,6 +4,7 @@
 satScanBusy = true;
 bravoKlicked = false;
 satScanComplete = false;
+if (!visibleMap) then {openMap true};
 
 onMapSingleClick "onMapSingleClick ''; satPos =+ _pos; bravoKlicked = true";
 
@@ -11,7 +12,7 @@ titleText ["Please specifiy scann area", "PLAIN DOWN"];
 
 waitUntil {bravoKlicked};
 
-scanArea = createMarker ["satScanArea", satPos];
+scanArea = createMarkerLocal ["satScanArea", satPos];
 scanArea setMarkerColor "ColorBlue";
 scanArea setMarkerShape "RECTANGLE";
 scanArea setMarkerBrush "BORDER";

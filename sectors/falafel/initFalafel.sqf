@@ -45,7 +45,6 @@ falafelExtra3_leader moveInGunner extra3MGNestFalafel;
 publicVariable "opforTrashbin";
 
 //SPAWN SECTOR EXTRAS
-
 ["falafel"] execVM "sectors\initSectorExtras.sqf";
 
 //SPAWN DEFAULT OPFOR SETS

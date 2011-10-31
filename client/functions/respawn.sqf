@@ -40,7 +40,7 @@ reload player;
 if ((paramsArray select 6) == 1) then 
 {
 	_dude = player;
-	["gnrf_addHelperArrow", _dude] call CBA_fnc_remoteEvent;
+	["gnrf_clientExecute", [_dude, "spawn", "grnf_helperArrow_fnc"]] call CBA_fnc_remoteEvent;
 };
 
 //re-add debug actions 

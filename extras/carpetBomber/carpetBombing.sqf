@@ -60,6 +60,8 @@ echoPlane flyInHeight 200;
 echoPlane setDir _dir;
 echoPlane setVelocity [64*(sin _dir), 64*(cos _dir), 0];
 
+publicVariable "echoPlane";
+
 //determine numbers of bombs to be spawned depending on bombing area lenght
 _bombCnt = ceil(_len * 0.057);
 echoPlane setVariable ["bombCnt", _bombCnt];
