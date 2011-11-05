@@ -39,14 +39,14 @@ class Extended_PreInit_EventHandlers
 //class M9SD { count = 3; };
 //};
 
-class Magazines
-{
-	// Add the magazines to the mission gear
-class 10Rnd_127x99_m107 { count = 150; };
-class 15Rnd_9x19_M9SD  { count = 250; };
-class 7Rnd_45ACP_1911  { count = 250; };
-class 100Rnd_556x45_BetaCMag { count = 250; };
-};
+//class Magazines
+//{
+//
+//class 10Rnd_127x99_m107 { count = 150; };
+//class 15Rnd_9x19_M9SD  { count = 250; };
+//class 7Rnd_45ACP_1911  { count = 250; };
+//class 100Rnd_556x45_BetaCMag { count = 250; };
+//};
 
 
 

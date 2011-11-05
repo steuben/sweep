@@ -47,7 +47,7 @@
     y = 0.37;
 	
 	text = "MC BATTERY";
-	action = "if (supportMCASBusy) exitWith {hint ""ASSET BUSEY""}; if (!supportMCAS) then {[0, player] execVM ""extras\supportSquad\arty.sqf""; closeDialog 0};   if (supportMCAS) then { closeDialog 0; _ok = createDialog ""uiAssmanDismissMortars""; };"	
+	action = "if (supportMCASBusy) exitWith {hint ""ASSET BUSEY""}; if (!supportMCAS) then {[0, player] execVM ""extras\supportSquad\arty.sqf""; assmanStart = false; closeDialog 0};   if (supportMCAS) then { closeDialog 0; _ok = createDialog ""uiAssmanDismissMortars""; };"	
   };
   
   class btn_reqSatscan:ButtonControlContent 
@@ -60,7 +60,7 @@
     y = 0.533;
 	
 	text = "SATSCAN";
-	action = "[] execVM ""extras\surveillance\satelliteScan.sqf""; closeDialog 0;"	
+	action = "[] execVM ""extras\surveillance\satelliteScan.sqf""; assmanStart = false; closeDialog 0;"	
   };
 
   class btn_reqAirsupport:ButtonControlContent 
@@ -73,7 +73,7 @@
     y = 0.37;
 	
 	text = "CAS 'MANATEE'";
-	action = "if (supportCASBusy) exitWith {hint ""ASSET BUSEY""}; if (!supportCAS) then {[0, player] execVM ""extras\supportSquad\CAS.sqf""; closeDialog 0};   if (supportCAS) then { closeDialog 0; _ok = createDialog ""uiAssmanDismissCAS""; };"	
+	action = "if (supportCASBusy) exitWith {hint ""ASSET BUSEY""}; if (!supportCAS) then {[0, player] execVM ""extras\supportSquad\CAS.sqf""; assmanStart = false; closeDialog 0};   if (supportCAS) then { closeDialog 0; _ok = createDialog ""uiAssmanDismissCAS""; };"	
   };
   
   class btn_reqCarpetbomb:ButtonControlContent 
@@ -86,7 +86,7 @@
     y = 0.46;
 	
 	text = "CARPET BOMBER";
-	action = "[player] execVM ""extras\carpetBomber\carpetInit.sqf""; closeDialog 0;"	
+	action = "[player] execVM ""extras\carpetBomber\carpetInit.sqf""; assmanStart = false; closeDialog 0;"	
   };
   
   

@@ -3,7 +3,7 @@ class uiAssmanStart
 
   idd = -1;
   movingEnable = true;
-  controlsBackground[] = {"bgShape","titleBarText"};
+  controlsBackground[] = {"bgShape","titleHome"};
   controls[] = {"btn_reqFiremission","btn_reqAirsupport","btn_reqCarpetbomb","btn_reqSatscan","subtitleH1_support_artillery","subtitleH1_support_air","subtitleH1_support_satscan", "btn_close"};
   objects[] = {};
   

@@ -83,7 +83,7 @@ class ButtonControlContent
     font = "EtelkaMonospaceProBold";
     sizeEx = 0.026;
 	
-    action = "closeDialog 0;"	
+    action = "assmanStart = false; closeDialog 0;"	
     
     default = false;
     colorText[] = {1,1,1,1}; // white

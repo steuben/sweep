@@ -105,7 +105,7 @@ class Mission
 					azimut=321.345;
 					id=48;
 					side="WEST";
-					vehicle="FR_Assault_GL";
+					vehicle="FR_TL";
 					player="PLAY CDG";
 					leader=1;
 					rank="CAPTAIN";
