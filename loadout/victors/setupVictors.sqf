@@ -34,7 +34,7 @@ clearWeaponCargo utilityVictor;
 
 // PRIMARY WEAPONS
 
-utilityVictor addWeaponCargo ["ACE_G3A3_RSAS_F",100];
+
 utilityVictor addWeaponCargo ["ACE_G36A1_AG36A1_D",100];
 utilityVictor addWeaponCargo ["G36K_camo",100];
 utilityVictor addWeaponCargo ["G36_C_SD_camo",100];
@@ -44,9 +44,6 @@ utilityVictor addWeaponCargo ["SCAR_H_CQC_CCO_SD",100];
 utilityVictor addWeaponCargo ["ACE_M16A4_ACG_GL_UP",100];
 utilityVictor addWeaponCargo ["ACE_M14_ACOG",100];
 
-utilityVictor addWeaponCargo ["M4A1_HWS_GL_SD_Camo",100];
-utilityVictor addWeaponCargo ["ACE_M4A1_AIM_GL_SD_F",100];
-
 utilityVictor addWeaponCargo ["ACE_HK416_D14_COMPM3_M320",100];
 
 utilityVictor addWeaponCargo ["ACE_HK417_Eotech_4x",100];
@@ -55,8 +52,9 @@ utilityVictor addWeaponCargo ["ACE_HK416_D14_ACOG_PVS14",100];
 
 
 utilityVictor addWeaponCargo ["SCAR_H_STD_TWS_SD",100];
-utilityVictor addWeaponCargo ["ACE_SOC_M4A1_TWS",100];
 utilityVictor addWeaponCargo ["Mk_48_DES_EP1",100];
+
+utilityVictor addWeaponCargo ["M32_EP1",100];
 
 // SNIPER RIFLES
 utilityVictor addWeaponCargo ["ACE_HK417_leupold",100];
@@ -74,7 +72,8 @@ utilityVictor addMagazineCargo ["100Rnd_762x51_M240",200];
 utilityVictor addMagazineCargo ["ACE_5Rnd_25x59_HEDP_Barrett",999];
 utilityVictor addMagazineCargo ["ACE_20Rnd_762x51_T_HK417",999];
 utilityVictor addMagazineCargo ["ACE_20Rnd_762x51_T_DMR",999];
-utilityVictor addMagazineCargo ["ACE_20Rnd_762x51_T_G3",999];
+utilityVictor addMagazineCargo ["6Rnd_HE_M203",100];
+utilityVictor addMagazineCargo ["ACE_6Rnd_CS_M32",100];
 
 // SNIPER RIFLE MAGAZINES
 utilityVictor addMagazineCargo ["ACE_20Rnd_762x51_T_M110",200];
