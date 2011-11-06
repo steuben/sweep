@@ -9,6 +9,8 @@ debugModeOn = false;
 major setGroupID ["HAMMER","GroupColor4"];
 Hammer = group major;
 
+opforCenter = createCenter EAST;
+
 // setup multiplayer broadcast system
 "broadcast" addPublicVariableEventHandler {[_this select 1] execVM "broadcast.sqf"};
 
