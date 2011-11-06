@@ -147,3 +147,6 @@ for '_i' from 0 to 0 do
 
 _building = getPos player nearestObject "Building";
 _building setDamage 0;
+
+/////////////////////////////
+

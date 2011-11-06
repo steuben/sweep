@@ -59,6 +59,10 @@ if (_veh == "man") then {
 };
 
 
+/// debug
+gnrf_testBomberman = _bomber; 
+
+
 if (_veh == "bike") then {
 			
 	_bombVeh = _bikeClass createVehicle _pos;
@@ -89,7 +93,6 @@ if (_veh == "car") then {
 _bomber setVariable ["explosive", _explosive];
 _bomber setVariable ["wpSet", _wpSet];
 
-//gnrf_testBomberman = _bomber; /// debug
 
 [_bomber, _roamSectors] spawn gnrf_randomWPgen_fnc;
 

@@ -42,6 +42,44 @@ _debugHideMenu_act = player addAction [("<t color=""#4693FF"">" + ("Hide Debug O
 	
 }],0,false,true,"","gnrf_debugMenu AND debugModeOn"];
 
+//zombie apocalypse
+_zombies_act = player addAction [("<t color=""#1F67CC"">" + ("Zombie Apocalypse") + "</t>"),"gen_action.sqf",[{
+	
+	[0, {[] execVM "extras\zombies.sqf";}] call CBA_fnc_globalExecute;
+	player setPosASL [4851.91,4596.26,45.4678];
+	
+}],0,false, false,"","isNil 'gnrf_zombiesOn' AND debugModeOn AND gnrf_debugMenu"];
+
+//stop zombie apocalypse
+_stopZombies_act = player addAction [("<t color=""#1F67CC"">" + ("Stop the Apocalypse") + "</t>"),"gen_action.sqf",[{
+	
+	gnrf_zombiesOn = nil;
+	publicVariable "gnrf_zombiesOn";
+	
+}],0,false, false,"","!isNil 'gnrf_zombiesOn' AND debugModeOn AND gnrf_debugMenu"];
+
+//debug bomberman
+_debugPortToBomberman_act = player addAction [("<t color=""#1F67CC"">" + ("Debug Bomberman") + "</t>"),"gen_action.sqf",[{	
+	
+	gnrf_debugBomberman = true;
+	["omaha"] execVM "extras\bombermen\bombermen.sqf";
+	waitUntil {alive gnrf_testBomberman};
+	sleep 5;
+	_pos = screenToWorld [0.5,0.5];
+	vehicle gnrf_testBomberman setPos _pos;
+	_opforGrp = createGroup EAST;
+	_createUnit = "ACE_RU_Soldier_GL_D" createUnit [[0,0,0], _opforGrp, "grnf_currentUnit = this;", 9, "Corporal"];
+	[gnrf_testBomberman] join grpNull;
+	[vehicle gnrf_testBomberman] join grpNull;
+	[gnrf_testBomberman] join grnf_currentUnit;
+	[vehicle gnrf_testBomberman] join grnf_currentUnit;
+	waitUntil {group gnrf_testBomberman == group grnf_currentUnit};
+	deleteVehicle grnf_currentUnit;
+	
+	gnrf_debugBomberman = nil;
+	
+}],0,false,true,"","(gnrf_debugMenu) AND (isNil 'gnrf_debugBomberman') AND debugModeOn"];
+
 //execute code from clipboard
 _testCode_act = player addAction [("<t color=""#1F67CC"">" + ("Test Code") + "</t>"),"gen_action.sqf",[{
 	
@@ -101,7 +139,7 @@ _debugObj_act = player addAction [("<t color=""#1F67CC"">" + ("Debug Civ Unit") 
 	_target = cursorTarget;
 	_targetName = _target call grnf_GetDisplayName_fnc;
 	_roles = _target getVariable "roles";	
-	player sideChat format ["Name: %1 # Roles: %2", _targetName, _roles]; 
+	player sideChat format ["Name: %1 # Roles: %2 # Side: %3", _targetName, _roles, side _target]; 
 	
 }],0,false,false,"","gnrf_debugMenu AND debugModeOn"];
 
@@ -156,19 +194,6 @@ _healAll_act = player addAction [("<t color=""#1F67CC"">" + ("Heal Units") + "</
 	{_x setDamage 0} forEach units group player;
 					
 }],0,false,true,"","gnrf_debugMenu AND debugModeOn"];
-
-//debug bomberman
-_debugPortToBomberman_act = player addAction [("<t color=""#1F67CC"">" + ("Debug Bomberman") + "</t>"),"gen_action.sqf",[{	
-	
-	gnrf_debugBomberman = true;
-	player setPos [4217,3920,0];
-	_pos = getPos player;
-	{_x setPos [(_pos select 0)+round(random 5), (_pos select 1)+round(random 5), 0]} forEach units group player;
-	waitUntil {alive gnrf_testBomberman};
-//	player setPos (getPos gnrf_testBomberman findEmptyPosition [1,20, "Man"]);
-//	player moveInCargo vehicle gnrf_testBomberman;
-	
-}],0,false,true,"","(gnrf_debugMenu) AND (isNil 'gnrf_debugBomberman') AND debugModeOn"];
 
 //board carpetbomber
 _getInEcho_act = player addAction [("<t color=""#1F67CC"">" + ("Board Echoplane") + "</t>"),"gen_action.sqf",[{
@@ -233,7 +258,7 @@ _debugBacon_act = player addAction [("<t color=""#053F90"">" + ("Debug Bacon") +
 [] execVM "debug\debugBacon.sqf";
 }],0,false,true,"","gnrf_showSectorDebug AND debugModeOn"];;
 	
-_newSectorInit_act= player addAction [("<t color=""#ff0000"">" + ("New Sector Init") + "</t>"),"gen_action.sqf",[{
+_newSectorInit_act = player addAction [("<t color=""#ff0000"">" + ("New Sector Init") + "</t>"),"gen_action.sqf",[{
 [] execVM "sectors\initSector.sqf";
 }],0,false,true,"","gnrf_showSectorDebug AND debugModeOn"];	
 

@@ -45,7 +45,9 @@ class Mission
 		"ace_sys_nvg",
 		"CATracked2_AAV",
 		"CACharacters_BAF",
-		"ca_baf"
+		"ca_baf",
+		"cacharacters_e",
+		"chn_undead"
 	};
 	addOnsAuto[]=
 	{
@@ -57,6 +59,7 @@ class Mission
 		"BI_SRRS",
 		"ace_sys_nvg",
 		"CACharacters_BAF",
+		"chn_undead",
 		"acex_c_weapon",
 		"ace_sys_weapons",
 		"ace_c_weapon",
@@ -91,7 +94,7 @@ class Mission
 	};
 	class Groups
 	{
-		items=19;
+		items=20;
 		class Item0
 		{
 			side="WEST";
@@ -530,6 +533,24 @@ class Mission
 					leader=1;
 					rank="CORPORAL";
 					skill=0.33333331;
+				};
+			};
+		};
+		class Item19
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={4293.3281,16.829962,3291.6934};
+					id=105;
+					side="LOGIC";
+					vehicle="CHN_UNDEAD_Logic2";
+					leader=1;
+					lock="UNLOCKED";
+					skill=0.60000002;
 				};
 			};
 		};

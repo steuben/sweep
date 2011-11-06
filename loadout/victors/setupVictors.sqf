@@ -142,3 +142,4 @@ medevacVictor addMagazineCargo ["ACE_Epinephrine",100];
 medevacVictor addMagazineCargo ["ACE_Morphine",100];
 medevacVictor addMagazineCargo ["ACE_Knicklicht_R",100];
 medevacVictor addMagazineCargo ["ACE_Knicklicht_IR",100];
+

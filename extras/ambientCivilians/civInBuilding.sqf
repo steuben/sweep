@@ -10,7 +10,7 @@ _unit = gnrf_currentCivUnit;
 gnrf_currentCivUnit = nil;
 gnrf_civUnits set [count gnrf_civUnits, _unit];
 _unit setPos _targetPos; 
-_unit allowFleeing 0;
+//_unit allowFleeing 0;
 _unit setVariable ["roles", ["housed"], true];
 
 while {alive _unit} do 
