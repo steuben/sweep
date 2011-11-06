@@ -50,7 +50,6 @@ class Mission
 	addOnsAuto[]=
 	{
 		"cacharacters2",
-		"acex_usnavy_men_usmc",
 		"ace_sys_repair",
 		"ace_sys_aitalk",
 		"ace_sys_crewserved",
@@ -140,7 +139,7 @@ class Mission
 					azimut=341.311;
 					id=49;
 					side="WEST";
-					vehicle="ACE_USMC_Soldier_TL_D";
+					vehicle="FR_TL";
 					player="PLAY CDG";
 					leader=1;
 					rank="CAPTAIN";
@@ -466,8 +465,8 @@ class Mission
 				items=4;
 				class Item0
 				{
-					position[]={4037.9465,18.033411,3232.7886};
-					azimut=-6.7273588;
+					position[]={4053.9558,17.779118,3239.4771};
+					azimut=-60.629776;
 					id=92;
 					side="WEST";
 					vehicle="USMC_Soldier_TL";
@@ -477,8 +476,8 @@ class Mission
 				};
 				class Item1
 				{
-					position[]={4041.688,17.917042,3234.123};
-					azimut=-399.34204;
+					position[]={4055.0837,17.797546,3243.2854};
+					azimut=-453.24457;
 					id=99;
 					side="WEST";
 					vehicle="USMC_Soldier_Medic";
@@ -486,8 +485,8 @@ class Mission
 				};
 				class Item2
 				{
-					position[]={4038.4121,18.059828,3238.2153};
-					azimut=-6.7273588;
+					position[]={4049.8469,17.916563,3243.0496};
+					azimut=-60.629776;
 					id=94;
 					side="WEST";
 					vehicle="USMC_Soldier_AR";
@@ -496,8 +495,8 @@ class Mission
 				};
 				class Item3
 				{
-					position[]={4040.3918,18.005737,3242.3257};
-					azimut=-19.737665;
+					position[]={4047.6895,18.016825,3247.0698};
+					azimut=-73.640068;
 					id=93;
 					side="WEST";
 					vehicle="USMC_Soldier_MG";
