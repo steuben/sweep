@@ -4,7 +4,8 @@ private ["_civs", "_munPos", "_livingDead", "_aliveCnt", "_grp", "_tmp", "_z", "
 gnrf_zombiesOn = true;
 publicVariable "gnrf_zombiesOn";
 _civs = units gnrf_civSet + units gnrf_civBuilding_grp;
-{_x setDamage 1} forEach _civs;
+[_civs] call CBA_fnc_deleteEntity;
+[gnrf_civVehicles] call CBA_fnc_deleteEntity;
 
 _munPos = [4854.33,4595.57,45.468];
 utilityVictor setPosASL _munPos;
@@ -34,7 +35,8 @@ while {!isNil "gnrf_zombiesOn"} do
 	_livingDead =+ _tmp;
 	_aliveCnt = count _livingDead;
 	_whackedCnt = _totalCnt - _aliveCnt;
-	player SideChat format ["Walking Dead: %1 - Zombies Whacked: %2", _aliveCnt, _whackedCnt];
+	_str = format ["Walking Dead: %1 - Zombies Whacked: %2", _aliveCnt, _whackedCnt];
+	["gnrf_clientExecute", ["player", "sideChat", _str]] call CBA_fnc_globalEvent;
 };
 
 

@@ -77,13 +77,13 @@ gnrf_movingCivs set [count gnrf_movingCivs, _civUnit];
 gnrf_civUnits set [count gnrf_civUnits, _civUnit];
 
 
-if ("driver" in _roles) then {
-
+if ("driver" in _roles) then 
+{
 	//create vehicle 
 	_civVehicle = _vehicleClass createVehicle _spawnPos;
 	_civUnit moveInDriver _civVehicle;
 	_civUnit setVariable ["vehicle", _civVehicle, true];
-	
+	gnrf_civVehicles set [count gnrf_civVehicles, _civVehicle];
 	if (_hasPassenger) then {
 		
 		//create passenger

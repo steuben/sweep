@@ -6,6 +6,7 @@ gnrf_civUnits = [];
 gnrf_movingCivs = [];
 gnrf_housedCivs = [];
 gnrf_scaredCivs = [];
+gnrf_civVehicles = [];
 
 civCenter = createCenter civilian;
 gnrf_civSet = createGroup civilian;

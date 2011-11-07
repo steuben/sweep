@@ -8,8 +8,8 @@ If ((paramsArray select 0) == 1) then
 	_aiBehaviour = "";
 	if (_setFriends == 1) then { 
 
-		WEST setFriend [EAST,1]; 
-		EAST setFriend [WEST,1]; 
+		[-2, {WEST setFriend [EAST,1]}] call CBA_fnc_globalExecute;
+		[-2, {EAST setFriend [WEST,1]}] call CBA_fnc_globalExecute;
 		_aiBehaviour = "friendly";
 	
 	} else {
@@ -46,9 +46,9 @@ _debugHideMenu_act = player addAction [("<t color=""#4693FF"">" + ("Hide Debug O
 _zombies_act = player addAction [("<t color=""#1F67CC"">" + ("Zombie Apocalypse") + "</t>"),"gen_action.sqf",[{
 	
 	[0, {[] execVM "extras\zombies.sqf";}] call CBA_fnc_globalExecute;
-	player setPosASL [4851.91,4596.26,45.4678];
+//	(_this select 3) setPosASL [4851.91,4596.26,45.4678];
 	
-}],0,false, false,"","isNil 'gnrf_zombiesOn' AND debugModeOn AND gnrf_debugMenu"];
+}, ],0,false, false,"","isNil 'gnrf_zombiesOn' AND debugModeOn AND gnrf_debugMenu"];
 
 //stop zombie apocalypse
 _stopZombies_act = player addAction [("<t color=""#1F67CC"">" + ("Stop the Apocalypse") + "</t>"),"gen_action.sqf",[{
