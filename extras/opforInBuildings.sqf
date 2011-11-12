@@ -112,10 +112,10 @@
 		["gnrf_clientExecute", [[], "execVM", "loadout\reinforcement.sqf"]] call CBA_fnc_globalEvent;	
 
 		// reset /repair
-		grnf_villaIsTriggered = nil;
+		[-2, {grnf_villaIsTriggered = nil}] call CBA_fnc_globalExecute;
 		gnrf_villaRepeat = true;
 		publicVariable "gnrf_villaRepeat";
-		publicVariable "grnf_villaIsTriggered";
+		
 		_building setDamage 0;
 		
 

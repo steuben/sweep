@@ -48,13 +48,12 @@ _zombies_act = player addAction [("<t color=""#1F67CC"">" + ("Zombie Apocalypse"
 	[0, {[] execVM "extras\zombies.sqf";}] call CBA_fnc_globalExecute;
 //	(_this select 3) setPosASL [4851.91,4596.26,45.4678];
 	
-}, ],0,false, false,"","isNil 'gnrf_zombiesOn' AND debugModeOn AND gnrf_debugMenu"];
+}],0,false, false,"","isNil 'gnrf_zombiesOn' AND debugModeOn AND gnrf_debugMenu"];
 
 //stop zombie apocalypse
 _stopZombies_act = player addAction [("<t color=""#1F67CC"">" + ("Stop the Apocalypse") + "</t>"),"gen_action.sqf",[{
 	
-	gnrf_zombiesOn = nil;
-	publicVariable "gnrf_zombiesOn";
+	[-2, {gnrf_zombiesOn = nil}] call CBA_fnc_globalExecute; 
 	
 }],0,false, false,"","!isNil 'gnrf_zombiesOn' AND debugModeOn AND gnrf_debugMenu"];
 

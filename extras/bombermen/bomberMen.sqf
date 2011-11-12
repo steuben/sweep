@@ -58,11 +58,6 @@ if (_veh == "man") then {
 	_randomWaypointNumber = 15;
 };
 
-
-/// debug
-gnrf_testBomberman = _bomber; 
-
-
 if (_veh == "bike") then {
 			
 	_bombVeh = _bikeClass createVehicle _pos;
@@ -74,6 +69,7 @@ if (_veh == "bike") then {
 	_wpSet = "Vehicle";
 	_randomWaypointNumber = 12;
 	_bomber setVariable ["vehicle", _bombVeh];
+	opforTrashbin set [count opforTrashbin, _bombVeh];
 };
 
 if (_veh == "car") then {
@@ -87,7 +83,13 @@ if (_veh == "car") then {
 	_wpSet = "Vehicle";
 	_randomWaypointNumber = 12;
 	_bomber setVariable ["vehicle", _bombVeh];
+	opforTrashbin set [count opforTrashbin, _bombVeh];
 };
+
+opforTrashbin set [count opforTrashbin, _bomber];
+
+/// debug
+gnrf_testBomberman = _bomber; 
 
 //store data in bomberman
 _bomber setVariable ["explosive", _explosive];
