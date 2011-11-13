@@ -22,7 +22,7 @@ if ((debugModeOn) OR (!isNil "gnrf_debugCalledOnce")) then {[] spawn gnrf_addDeb
 
 
 //set player to respawn position
-if (!isNil "gnrf_zombiesOn") exitWith {player setPosASL [4851.91,4596.26,45.4678]};
+if (!isNil "gnrf_zombiesRespawnPos") exitWith {player setPosASL gnrf_zombiesRespawnPos};
 
 _minDis = 10000;
 _nearestPos = [];

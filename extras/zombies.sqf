@@ -3,29 +3,47 @@ private ["_civs", "_munPos", "_livingDead", "_aliveCnt", "_grp", "_tmpDead", "_t
 
 gnrf_zombiesOn = true;
 publicVariable "gnrf_zombiesOn";
+
+//clear map
 _civs = units gnrf_civSet + units gnrf_civBuilding_grp;
 [_civs] call CBA_fnc_deleteEntity;
 [gnrf_civVehicles] call CBA_fnc_deleteEntity;
 
-_munPos = [4854.33,4595.57,45.468];
-utilityVictor setPosASL _munPos;
+//initalize vars
+_spawnPos = _this select 0;
+_targetPos = _this select 1;
+_zombiesPerWave = _this select 2;
+_waveInterval = _this select 3;
+_maxZombies = _this select 4;
+if (count _this >= 6) then 
+{
+	//get Ammo
+	_munPos = _this select 5;
+	utilityVictor setPosASL _munPos;
+};
+
+if (count _this >= 7) then 
+{
+	//broadcast temporary respawnPos
+	gnrf_zombiesRespawnPos = _this select 6;
+	publicVariable "gnrf_zombiesRespawnPos";	
+};
 
 _livingDead = [];
 _aliveCnt = 0;
 _totalCnt = 0;
 _whackedCnt = 0;
-_zombiesPerWave = 15;
 _tmpDead = [];
 while {!isNil "gnrf_zombiesOn"} do 
 {	
-	if (_aliveCnt < 200) then 
+	if (_aliveCnt < _maxZombies) then 
 	{
-		_grp = [[4569,4361,0],_zombiesPerWave,[4844,4594,45.4645]] call CHN_UNDEAD_fn_CRTZEDGRPMV;
+		_grp = [_spawnPos,_zombiesPerWave,_targetPos] call CHN_UNDEAD_fn_CRTZEDGRPMV;
 		_livingDead = _livingDead + units _grp;
 		_totalCnt = _totalCnt + _zombiesPerWave;
 	};
 	
-	sleep 30;
+	sleep _waveInterval;
 	
 	_tmpAlive = [];
 	for "_i" from 0 to (count _livingDead)-1 do 
@@ -40,18 +58,28 @@ while {!isNil "gnrf_zombiesOn"} do
 	_str = format ["Walking Dead: %1 - Zombies Whacked: %2", _aliveCnt, _whackedCnt];
 	["gnrf_clientExecute", ["player", "sideChat", _str]] call CBA_fnc_globalEvent;
 	
-	if (count _tmpDead >= 150) then 
+	_str = format ["bodies: %1", count _tmpDead]; ///////
+	["gnrf_clientExecute", ["player", "sideChat", _str]] call CBA_fnc_globalEvent; //////////
+	
+	if (count _tmpDead >= 100) then 
 	{
 		_del = [];
-		for "_i" from 0 to 49 do 
+		for "_i" from 0 to round(count _tmpDead / 2) do 
 		{
 			_e = _tmpDead select _i;
 			_del set [count _del, _e];
 		};
+	
+		_str = format ["to be deleted: %1", count _del]; ///////
+		["gnrf_clientExecute", ["player", "sideChat", _str]] call CBA_fnc_globalEvent; //////////
 		
 		_tmpDead = _tmpDead - _del;
 		[_del] call CBA_fnc_deleteEntity;
-	};
-			
+		
+		_str = format ["bodies new: %1", count _tmpDead]; ///////
+		["gnrf_clientExecute", ["player", "sideChat", _str]] call CBA_fnc_globalEvent; //////////
+	};			
 };
+
+[-2, {gnrf_zombiesRespawnPos = nil}] call CBA_fnc_globalExecute; 
 
