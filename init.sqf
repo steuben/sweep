@@ -10,6 +10,7 @@ major setGroupID ["HAMMER","GroupColor4"];
 Hammer = group major;
 
 opforCenter = createCenter EAST;
+setViewDistance 2500;
 
 // setup multiplayer broadcast system
 "broadcast" addPublicVariableEventHandler {[_this select 1] execVM "broadcast.sqf"};
@@ -23,3 +24,5 @@ if (!isDedicated) then {
 	gnrf_players = call CBA_fnc_players;
 	publicVariable "gnrf_players";
 };
+
+

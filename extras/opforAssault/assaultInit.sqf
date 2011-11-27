@@ -1,5 +1,5 @@
 
-
+setViewDistance 4500;
 
 	assaultSetCreating = false;
 	publicVariable "assaultSetCreating";
