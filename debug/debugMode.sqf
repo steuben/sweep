@@ -49,7 +49,7 @@ _zombies_act = player addAction [("<t color=""#1F67CC"">" + ("Zombie House Party
 	// [startPos, targetPos, zombiesPerWave, waveInterval (in seconds), max Nr of Zombies, utilityVictorPosASL (optional), respawnPosASL (optional)]
 	[0, {[[4569,4361,0], [4844,4594,45.4645], 15, 30, 200, [4851.91,4596.26,45.4678]] execVM "extras\zombies\zombies.sqf";}] call CBA_fnc_globalExecute;
 	
-}],0,false, false,"","isNil 'gnrf_zombies' AND debugModeOn AND gnrf_debugMenu"];
+}],0,false, false,"","isNil 'gnrf_zombies' AND debugModeOn AND gnrf_debugMenu AND (paramsArray select 7) == 1"];
 
 //zombies at bacon hill
 _zombies2_act = player addAction [("<t color=""#1F67CC"">" + ("The Hills have Bacon") + "</t>"),"gen_action.sqf",[{
@@ -70,7 +70,7 @@ _zombies2_act = player addAction [("<t color=""#1F67CC"">" + ("The Hills have Ba
 	sleep 1;
 	[0, {[[3596,5081,0], [3995.9,4679.14,35.6767], 8 + (random 4), 20 + (random 5), 1000] execVM "extras\zombies\zombies.sqf";}] call CBA_fnc_globalExecute;
 	
-}],0,false, false,"","isNil 'gnrf_zombies' AND debugModeOn AND gnrf_debugMenu"];
+}],0,false, false,"","isNil 'gnrf_zombies' AND debugModeOn AND gnrf_debugMenu AND (paramsArray select 7) == 1"];
 
 
 //stop zombie apocalypse

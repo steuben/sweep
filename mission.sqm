@@ -544,6 +544,7 @@ class Mission
 				items=1;
 				class Item0
 				{
+					presenceCondition="(paramsArray select 7) == 1;";
 					position[]={4293.3281,16.829962,3291.6934};
 					id=105;
 					side="LOGIC";

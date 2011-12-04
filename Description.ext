@@ -118,6 +118,14 @@ class Params
                 default = 1;
         };
 		
+		class undeadMode
+        {
+        //paramsArray[7]
+                title = "Undead Mode";
+                values[] = {0, 1};
+                texts[] = {"Disabled", "Enabled"};
+                default = 0;
+        };
 };
 
 

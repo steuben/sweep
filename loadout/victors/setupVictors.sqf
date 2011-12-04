@@ -16,8 +16,6 @@ _coInMenu_act = utilityVictor addAction [("<t color=""#4693FF"">" + ("Constructi
 
 
 // Kill Detection
-
-
 leadVictor addMPEventhandler ["MPKilled", "if (isServer) then {[_this select 0, _this select 1] spawn killDetector_compiled}"];
 utilityVictor addMPEventhandler ["MPKilled", "if (isServer) then {[_this select 0, _this select 1] spawn killDetector_compiled}"];
 medevacVictor addMPEventhandler ["MPKilled", "if (isServer) then {[_this select 0, _this select 1] spawn killDetector_compiled}"];
