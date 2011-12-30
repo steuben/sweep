@@ -60,6 +60,7 @@ class Mission
 		"ace_sys_nvg",
 		"CACharacters_BAF",
 		"chn_undead",
+		"ace_sys_wounds",
 		"acex_c_weapon",
 		"ace_sys_weapons",
 		"ace_c_weapon",
@@ -94,7 +95,7 @@ class Mission
 	};
 	class Groups
 	{
-		items=20;
+		items=21;
 		class Item0
 		{
 			side="WEST";
@@ -550,6 +551,42 @@ class Mission
 					side="LOGIC";
 					vehicle="CHN_UNDEAD_Logic2";
 					leader=1;
+					lock="UNLOCKED";
+					skill=0.60000002;
+				};
+			};
+		};
+		class Item20
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=3;
+				class Item0
+				{
+					position[]={3808.8281,13.978282,3091.4463};
+					id=106;
+					side="LOGIC";
+					vehicle="ACE_Wounds_Logic";
+					leader=1;
+					lock="UNLOCKED";
+					skill=0.60000002;
+				};
+				class Item1
+				{
+					position[]={3841.7283,14.386469,3089.9463};
+					id=107;
+					side="LOGIC";
+					vehicle="ACE_Wounds_MedicsOnly_Logic";
+					lock="UNLOCKED";
+					skill=0.60000002;
+				};
+				class Item2
+				{
+					position[]={3807.918,13.73581,3063.2441};
+					id=108;
+					side="LOGIC";
+					vehicle="ACE_Wounds_EveryoneMedic";
 					lock="UNLOCKED";
 					skill=0.60000002;
 				};

@@ -24,7 +24,8 @@ _unit addMagazine "ACE_20Rnd_762x51_T_HK417";
 _unit addMagazine "HandGrenade_West";
 _unit addMagazine "HandGrenade_West";
 _unit addMagazine "HandGrenade_West";
-_unit addMagazine "ACE_Claymore_M";
+_unit addMagazine "HandGrenade_West";
+
 _unit addMagazine "PipeBomb";
 _unit addMagazine "Laserbatteries";
 
@@ -32,17 +33,17 @@ _unit addMagazine "Laserbatteries";
 _unit addWeapon "ACE_HK417_Eotech_4x";
 
 // MEDICAL SUPPLIES FOR IFAK
-/*
+
 _unit addMagazine "ACE_Bandage";
 _unit addMagazine "ACE_Bandage";
 _unit addMagazine "ACE_Epinephrine";
 _unit addMagazine "ACE_Epinephrine";
 _unit addMagazine "ACE_Morphine";
 _unit addMagazine "ACE_Morphine";
-*/
+
 // SECONDARY WEAPON MAGS / 8 slots
 
-_unit addMagazine "7Rnd_45ACP_1911";
+_unit addMagazine "ACE_Medkit";
 _unit addMagazine "7Rnd_45ACP_1911";
 _unit addMagazine "7Rnd_45ACP_1911";
 _unit addMagazine "7Rnd_45ACP_1911";
@@ -97,14 +98,14 @@ _unit addWeapon "SCAR_H_STD_EGLM_Spect";
 _unit addWeapon "SMAW";
 
 // MEDICAL SUPPLIES FOR IFAK
-/*
+
 _unit addMagazine "ACE_Bandage";
 _unit addMagazine "ACE_Bandage";
 _unit addMagazine "ACE_Epinephrine";
 _unit addMagazine "ACE_Epinephrine";
 _unit addMagazine "ACE_Morphine";
 _unit addMagazine "ACE_Morphine";
-*/
+
 
 
 // SECONDARY WEAPON MAGS / 8 slots

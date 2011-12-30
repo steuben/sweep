@@ -165,3 +165,20 @@ player setDamage 0;
 
 //add KilledEH
 {_x addMPEventhandler ["MPKilled", "if (isServer) then {[_this select 0, _this select 1] spawn killDetector_compiled}"]} forEach units group player;
+
+// RESUPPLY MEDICS
+
+	[steuben6, "BTH"] call ACE_fnc_RemoveGear;
+	_success = [steuben6, "ACE_Bandage", 10] call ACE_fnc_PackMagazine;
+	_success = [steuben6, "ACE_Epinephrine", 10] call ACE_fnc_PackMagazine;
+	_success = [steuben6, "ACE_Morphine", 10] call ACE_fnc_PackMagazine;
+	_success = [steuben6, "ACE_LargeBandage", 10] call ACE_fnc_PackMagazine;
+	_success = [steuben6, "ACE_Medkit", 5] call ACE_fnc_PackMagazine;
+	
+	
+	[steuben7, "BTH"] call ACE_fnc_RemoveGear;
+	_success = [steuben7, "ACE_Bandage", 10] call ACE_fnc_PackMagazine;
+	_success = [steuben7, "ACE_Epinephrine", 10] call ACE_fnc_PackMagazine;
+	_success = [steuben7, "ACE_Morphine", 10] call ACE_fnc_PackMagazine;
+	_success = [steuben7, "ACE_LargeBandage", 10] call ACE_fnc_PackMagazine;
+	_success = [steuben7, "ACE_Medkit", 5] call ACE_fnc_PackMagazine;
