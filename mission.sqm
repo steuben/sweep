@@ -51,6 +51,7 @@ class Mission
 	};
 	addOnsAuto[]=
 	{
+		"acex_usnavy_men_usmc",
 		"cacharacters2",
 		"ace_sys_repair",
 		"ace_sys_aitalk",
@@ -108,12 +109,13 @@ class Mission
 					azimut=321.345;
 					id=48;
 					side="WEST";
-					vehicle="FR_TL";
+					vehicle="ACE_USMC_Soldier_SL_D";
 					player="PLAY CDG";
 					leader=1;
 					rank="CAPTAIN";
 					skill=0.60000002;
 					text="steuben";
+					init="this setVariable [""ace_w_eh"",0];";
 				};
 			};
 			class Waypoints
@@ -143,7 +145,7 @@ class Mission
 					azimut=341.311;
 					id=49;
 					side="WEST";
-					vehicle="FR_TL";
+					vehicle="ACE_USMC_Soldier_TL_D";
 					player="PLAY CDG";
 					leader=1;
 					rank="CAPTAIN";
@@ -574,19 +576,19 @@ class Mission
 				};
 				class Item1
 				{
-					position[]={3841.7283,14.386469,3089.9463};
+					position[]={3807.918,13.73581,3063.2441};
 					id=107;
 					side="LOGIC";
-					vehicle="ACE_Wounds_MedicsOnly_Logic";
+					vehicle="ACE_Wounds_EveryoneMedic";
 					lock="UNLOCKED";
 					skill=0.60000002;
 				};
 				class Item2
 				{
-					position[]={3807.918,13.73581,3063.2441};
+					position[]={3828.0845,13.920845,3063.4971};
 					id=108;
 					side="LOGIC";
-					vehicle="ACE_Wounds_EveryoneMedic";
+					vehicle="ACE_Wounds_FullHeal";
 					lock="UNLOCKED";
 					skill=0.60000002;
 				};
@@ -1106,6 +1108,7 @@ class Mission
 			leader=1;
 			skill=1;
 			text="medevacVictor";
+			init="this setVariable [""ace_w_heal"", true];";
 		};
 		class Item51
 		{
