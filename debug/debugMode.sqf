@@ -118,6 +118,34 @@ _teleport_act = player addAction ["<t color=""#1F67CC"">Teleport</t>","gen_actio
 	onMapSingleClick "onMapSingleClick''; player setPos _pos; openMap false; gnrf_teleportInUse = nil; true;";
 }],0,false,true,"","(isNil 'gnrf_teleportInUse') AND (gnrf_debugMenu) AND debugModeOn"];
 
+//teleport cursorTarget
+_teleport_tAct = player addAction ["<t color=""#1F67CC"">Tele-Transport</t>","gen_action.sqf",[{	
+
+	_target = cursorTarget;
+	if (isNull _target) exitWith {hint "Error - No target selected"};
+	gnrf_teleportInUse = true;
+	player setVariable ["debugTarget", _target];
+	if (!visibleMap) then {openMap true};
+	titleText ["Click on map to teleport", "PLAIN DOWN"];
+	onMapSingleClick "
+		onMapSingleClick''; 
+		_groundPos = [_pos select 0, _pos select 1, 0]; 
+		player setPos _groundPos; 
+		_target = player getVariable 'debugTarget';
+		_x = (_groundPos select 0) + (3 + (random 3)); 
+		_y = (_groundPos select 1) + (3 + (random 3)); 
+		_z = 0;
+		_nearPos = [_x, _y, _z];
+		_targetPos = _nearPos findEmptyPosition [10, 50, typeOf _target];
+		if (count _targetPos == 0) then {_targetPos =_groundPos; hint 'Object could not be placed properly at this location... I tried anyway.';};			
+		_target setPos _targetPos;
+		openMap false; 
+		gnrf_teleportInUse = nil; 
+		true;
+	";
+	
+}],0,false,true,"","(isNil 'gnrf_teleportInUse') AND (gnrf_debugMenu) AND debugModeOn"];
+
 //get building positions
 _getBuildingPos_act = player addAction [("<t color=""#1F67CC"">" + ("Get Building Positions") + "</t>"),"gen_action.sqf",[{
 	_zargabadBuildings = [];
@@ -161,7 +189,7 @@ _debugObj_act = player addAction [("<t color=""#1F67CC"">" + ("Debug Civ Unit") 
 	_target = cursorTarget;
 	_targetName = _target call grnf_GetDisplayName_fnc;
 	_roles = _target getVariable "roles";	
-	player sideChat format ["Name: %1 # Roles: %2 # Side: %3", _targetName, _roles, side _target]; 
+	player sideChat format ["Name: %1 # Roles: %2 # Side: %3 # InMovingCivs: %4", _targetName, _roles, side _target, _target in gnrf_movingCivs]; 
 	
 }],0,false,false,"","gnrf_debugMenu AND debugModeOn"];
 

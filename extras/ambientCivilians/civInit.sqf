@@ -50,4 +50,6 @@ for "_i" from 0 to 60 do {
 //////civ movement
 [] spawn compile preprocessFile "extras\ambientCivilians\civMovement.sqf";
 
+publicVariable "gnrf_movingCivs";
+
 [-2, {endLoadingScreen}] call CBA_fnc_globalExecute;

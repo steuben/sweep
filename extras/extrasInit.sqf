@@ -12,7 +12,6 @@ if (!isDedicated) then {
 	
 	//////scripts
 	if ((paramsArray select 0) == 1) then {[] execVM "debug\debugMode.sqf"};
-	[] execVM "client\XeventHandlers.sqf";
 	[] execVM "extras\atv\initATV.sqf";
 	[] execVM "extras\supportSquad\supportSquadInit.sqf";
 	[] execVM "extras\surveillance\revealUnits.sqf";
@@ -25,9 +24,10 @@ if (!isDedicated) then {
 	[] execVM "extras\CoIn\CoIn.sqf";
 	[] execVM "extras\freezeTime.sqf";
 	[] execVM "client\eventHandlers.sqf";
+	[] execVM "client\CBAevents.sqf";
 
+	
 //////triggers
-
 	//civs near player
 	_trg = createTrigger["EmptyDetector", getPos player]; 
 	_trg setTriggerArea[200,200,0,false]; 
@@ -102,6 +102,11 @@ gnrf_globalStreets = gnrf_omahaStreets + gnrf_golemStreets + gnrf_falafelStreets
 
 if (!isServer) exitWith {};
 
+//[] execVM "extras\noGoZone\noGoZoneServer.sqf";
+//[] execVM "extras\opforAssault\assaultInit.sqf";
+[] execVM "extras\ambientCivilians\civInit.sqf";
+[] execVM "server\CBAevents.sqf";
+
 //////objects
 gnrf_manateeHelipad = "HeliH" createVehicle (gnrf_crusaderHQ modelToWorld [22.2898, -60.0000, 0]);
 gnrf_drebinFlagPole = "FlagCarrierUSArmy_EP1" createVehicle [3942,4669,0];
@@ -119,7 +124,6 @@ alphaTeamKills = [];
 bravoTeamKills = [];
 
 //////serverFunctions preCompiled
-
 grnf_SGetDisplayName_fnc = compile preProcessFileLineNumbers "server\functions\serverGetDisplayName.sqf";
 
 carpetBombing = compile preProcessFileLineNumbers "extras\carpetBomber\carpetBombing.sqf";
@@ -159,9 +163,3 @@ publicVariable "initOmaha_compiled";
 
 initPanties_compiled = compile preProcessFileLineNumbers "sectors\panties\initPanties.sqf";
 publicVariable "initPanties_compiled"; 
-
-//////scripte
-
-//[] execVM "extras\noGoZone\noGoZoneServer.sqf";
-//[] execVM "extras\opforAssault\assaultInit.sqf";
-[] execVM "extras\ambientCivilians\civInit.sqf";

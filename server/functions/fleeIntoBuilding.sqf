@@ -1,12 +1,13 @@
 
 	
 	private ["_unit", "_pos", "_posArray", "_someH", "_building", "_cnt", "_done", "_targetPos"]; 
-	
 	_unit = _this select 0; 	
+
 	if (!(_unit in gnrf_movingCivs)) exitWith {};
+	player sideChat format ["unit: %1", _unit]; /////
 	gnrf_movingCivs = gnrf_movingCivs - [_unit];
 	
-	_targetPos = [_unit, gnrf_allBuildings1st] call CBA_fnc_getNearest;		
+	_targetPos = [getPos _unit, gnrf_allBuildings1st] call CBA_fnc_getNearest;		
 	
 	doStop _unit;
 	_unit domove (_targetPos); 

@@ -44,8 +44,7 @@ publicVariable "gnrf_drebinOfficer";
 
 ["gnrf_clientExecute", [[], "spawn", "gnrf_counterAttack_Act"]] call CBA_fnc_globalEvent;
 
-[-1, {titleText ["Receive new orders at the barracks", "PLAIN"];}] call CBA_fnc_globalExecute;
-
+["gnrf_clientExecute", ["titleText", ["Receive new orders at the barracks", "PLAIN"]]] call CBA_fnc_globalEvent;
 
 
 
