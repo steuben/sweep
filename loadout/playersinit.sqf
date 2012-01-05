@@ -24,7 +24,8 @@ _unit addMagazine "ACE_20Rnd_762x51_T_HK417";
 _unit addMagazine "HandGrenade_West";
 _unit addMagazine "HandGrenade_West";
 _unit addMagazine "HandGrenade_West";
-_unit addMagazine "ACE_Claymore_M";
+_unit addMagazine "HandGrenade_West";
+
 _unit addMagazine "PipeBomb";
 _unit addMagazine "Laserbatteries";
 
@@ -40,6 +41,7 @@ _unit addMagazine "ACE_Epinephrine";
 _unit addMagazine "ACE_Morphine";
 _unit addMagazine "ACE_Morphine";
 */
+
 // SECONDARY WEAPON MAGS / 8 slots
 
 _unit addMagazine "7Rnd_45ACP_1911";
@@ -145,15 +147,15 @@ if (player == steuben) then {
 
 "steubenSpawn" setMarkerPos getpos steuben; 
 
-"ACE_USMC_SoldierM_Marksman_D" createUnit [getMarkerPos "steubenSpawn", alpha, "steuben2=this", 1, ""];
-"ACE_USMC_Soldier_TAR_D" createUnit [getMarkerPos "steubenSpawn", alpha, "steuben3=this", 1, ""];
-"ACE_USMC_Soldier_AT_D" createUnit [getMarkerPos "steubenSpawn", alpha, "steuben4=this", 0.8, ""];
-"ACE_USMC_Soldier_GL_D" createUnit [getMarkerPos "steubenSpawn", alpha, "steuben5=this", 0.8, ""];
+"ACE_USMC_SoldierM_Marksman_D" createUnit [getMarkerPos "steubenSpawn", alpha, "steuben2=this; this setVariable ['ace_w_eh',0];", 1, ""];
+"ACE_USMC_Soldier_TAR_D" createUnit [getMarkerPos "steubenSpawn", alpha, "steuben3=this; this setVariable ['ace_w_eh',0];", 1, ""];
+"ACE_USMC_Soldier_AT_D" createUnit [getMarkerPos "steubenSpawn", alpha, "steuben4=this; this setVariable ['ace_w_eh',0];", 0.8, ""];
+"ACE_USMC_Soldier_GL_D" createUnit [getMarkerPos "steubenSpawn", alpha, "steuben5=this; this setVariable ['ace_w_eh',0];", 0.8, ""];
 
-"ACE_USMC_Soldier_Medic_D" createUnit [getMarkerPos "steubenSpawn", alpha, "steuben6=this", 0.6, ""];
-"ACE_USMC_Soldier_Medic_D" createUnit [getMarkerPos "steubenSpawn", alpha, "steuben7=this", 0.6, ""];
-"ACE_USMC_SoldierS_Engineer_D" createUnit [getMarkerPos "steubenSpawn", alpha, "steuben8=this", 0.7, ""];
-"ACE_USMC_SoldierS_Engineer_D" createUnit [getMarkerPos "steubenSpawn", alpha, "steuben9=this", 0.7, ""];
+"ACE_USMC_Soldier_Medic_D" createUnit [getMarkerPos "steubenSpawn", alpha, "steuben6=this; this setVariable ['ace_w_eh',0];", 0.6, ""];
+"ACE_USMC_Soldier_Medic_D" createUnit [getMarkerPos "steubenSpawn", alpha, "steuben7=this; this setVariable ['ace_w_eh',0];", 0.6, ""];
+"ACE_USMC_SoldierS_Engineer_D" createUnit [getMarkerPos "steubenSpawn", alpha, "steuben8=this; this setVariable ['ace_w_eh',0];", 0.7, ""];
+"ACE_USMC_SoldierS_Engineer_D" createUnit [getMarkerPos "steubenSpawn", alpha, "steuben9=this; this setVariable ['ace_w_eh',0];", 0.7, ""];
 
 waitUntil {({alive _x} count units alpha) == 9};
 
@@ -375,26 +377,29 @@ _unit addMagazine "ACE_20Rnd_762x51_T_HK417";
 _unit addMagazine "ACE_20Rnd_762x51_T_HK417";
 _unit addMagazine "ACE_20Rnd_762x51_T_HK417";
 _unit addMagazine "ACE_20Rnd_762x51_T_HK417";
-
-_unit addMagazine "ACE_IV";
-_unit addMagazine "ACE_Plasma";
-_unit addMagazine "ACE_Splint";
+_unit addMagazine "ACE_20Rnd_762x51_T_HK417";
+_unit addMagazine "ACE_20Rnd_762x51_T_HK417";
+_unit addMagazine "ACE_20Rnd_762x51_T_HK417";
+_unit addMagazine "ACE_20Rnd_762x51_T_HK417";
+_unit addMagazine "ACE_20Rnd_762x51_T_HK417";
+_unit addMagazine "ACE_20Rnd_762x51_T_HK417";
+_unit addMagazine "ACE_20Rnd_762x51_T_HK417";
 
 // PRIMARY WEAPON
 _unit addWeapon "ACE_HK417_Eotech_4x";
 
 // SECONDARY WEAPON MAGS / 8 slots
-_unit addMagazine "ACE_Medkit";
+/*_unit addMagazine "ACE_Medkit";
 _unit addMagazine "ACE_Medkit";
 _unit addMagazine "ACE_Bandage";
 _unit addMagazine "ACE_Bandage";
 _unit addMagazine "ACE_Morphine";
 _unit addMagazine "ACE_Morphine";
 _unit addMagazine "ACE_Epinephrine";
-_unit addMagazine "ACE_Epinephrine";
+_unit addMagazine "ACE_Epinephrine";*/
 
 // SECONDARY WEAPON
-_unit addWeapon "glock17_EP1";
+//_unit addWeapon "glock17_EP1";
 
 // EQUIPMENT
 _unit addWeapon "Binocular";
@@ -425,26 +430,29 @@ _unit addMagazine "ACE_20Rnd_762x51_T_HK417";
 _unit addMagazine "ACE_20Rnd_762x51_T_HK417";
 _unit addMagazine "ACE_20Rnd_762x51_T_HK417";
 _unit addMagazine "ACE_20Rnd_762x51_T_HK417";
-
-_unit addMagazine "ACE_IV";
-_unit addMagazine "ACE_Plasma";
-_unit addMagazine "ACE_Splint";
+_unit addMagazine "ACE_20Rnd_762x51_T_HK417";
+_unit addMagazine "ACE_20Rnd_762x51_T_HK417";
+_unit addMagazine "ACE_20Rnd_762x51_T_HK417";
+_unit addMagazine "ACE_20Rnd_762x51_T_HK417";
+_unit addMagazine "ACE_20Rnd_762x51_T_HK417";
+_unit addMagazine "ACE_20Rnd_762x51_T_HK417";
+_unit addMagazine "ACE_20Rnd_762x51_T_HK417";
 
 // PRIMARY WEAPON
 _unit addWeapon "ACE_HK417_Eotech_4x";
 
 // SECONDARY WEAPON MAGS / 8 slots
-_unit addMagazine "ACE_Medkit";
+/*_unit addMagazine "ACE_Medkit";
 _unit addMagazine "ACE_Medkit";
 _unit addMagazine "ACE_Bandage";
 _unit addMagazine "ACE_Bandage";
 _unit addMagazine "ACE_Morphine";
 _unit addMagazine "ACE_Morphine";
 _unit addMagazine "ACE_Epinephrine";
-_unit addMagazine "ACE_Epinephrine";
+_unit addMagazine "ACE_Epinephrine";*/
 
 // SECONDARY WEAPON
-_unit addWeapon "glock17_EP1";
+//_unit addWeapon "glock17_EP1";
 
 // EQUIPMENT
 _unit addWeapon "Binocular";
@@ -478,8 +486,8 @@ _unit addMagazine "ACE_20Rnd_762x51_T_HK417";
 _unit addMagazine "ACE_20Rnd_762x51_T_HK417";
 _unit addMagazine "ACE_20Rnd_762x51_T_HK417";
 _unit addMagazine "ACE_20Rnd_762x51_T_HK417";
-_unit addMagazine "ACE_C4_M";
-_unit addMagazine "ACE_C4_M";
+_unit addMagazine "PipeBomb";
+_unit addMagazine "PipeBomb";
 _unit addMagazine "PipeBomb";
 _unit addMagazine "PipeBomb";
 
@@ -531,8 +539,8 @@ _unit addMagazine "ACE_20Rnd_762x51_T_HK417";
 _unit addMagazine "ACE_20Rnd_762x51_T_HK417";
 _unit addMagazine "ACE_20Rnd_762x51_T_HK417";
 _unit addMagazine "ACE_20Rnd_762x51_T_HK417";
-_unit addMagazine "ACE_C4_M";
-_unit addMagazine "ACE_C4_M";
+_unit addMagazine "PipeBomb";
+_unit addMagazine "PipeBomb";
 _unit addMagazine "PipeBomb";
 _unit addMagazine "PipeBomb";
 
@@ -612,15 +620,15 @@ if (player == bbq) then {
 
 "bbqSpawn" setMarkerPos getpos bbq; 
 
-"ACE_USMC_SoldierM_Marksman_D" createUnit [getMarkerPos "bbqSpawn", bravo, "bbq2=this", 1, ""];
-"ACE_USMC_Soldier_TAR_D" createUnit [getMarkerPos "bbqSpawn", bravo, "bbq3=this", 1, ""];
-"ACE_USMC_Soldier_D" createUnit [getMarkerPos "bbqSpawn", bravo, "bbq4=this", 0.8, ""];
-"ACE_USMC_Soldier_GL_D" createUnit [getMarkerPos "bbqSpawn", bravo, "bbq5=this", 0.8, ""];
+"ACE_USMC_SoldierM_Marksman_D" createUnit [getMarkerPos "bbqSpawn", bravo, "bbq2=this; this setVariable ['ace_w_eh',0];", 1, ""];
+"ACE_USMC_Soldier_TAR_D" createUnit [getMarkerPos "bbqSpawn", bravo, "bbq3=this; this setVariable ['ace_w_eh',0];", 1, ""];
+"ACE_USMC_Soldier_D" createUnit [getMarkerPos "bbqSpawn", bravo, "bbq4=this; this setVariable ['ace_w_eh',0];", 0.8, ""];
+"ACE_USMC_Soldier_GL_D" createUnit [getMarkerPos "bbqSpawn", bravo, "bbq5=this; this setVariable ['ace_w_eh',0];", 0.8, ""];
 
-"ACE_USMC_Soldier_D" createUnit [getMarkerPos "bbqSpawn", bravo, "bbq6=this", 0.6, ""];
-"ACE_USMC_Soldier_D" createUnit [getMarkerPos "bbqSpawn", bravo, "bbq7=this", 0.6, ""];
-"ACE_USMC_Soldier_D" createUnit [getMarkerPos "bbqSpawn", bravo, "bbq8=this", 0.6, ""];
-"ACE_USMC_Soldier_D" createUnit [getMarkerPos "bbqSpawn", bravo, "bbq9=this", 0.6, ""];
+"ACE_USMC_Soldier_D" createUnit [getMarkerPos "bbqSpawn", bravo, "bbq6=this; this setVariable ['ace_w_eh',0];", 0.6, ""];
+"ACE_USMC_Soldier_D" createUnit [getMarkerPos "bbqSpawn", bravo, "bbq7=this; this setVariable ['ace_w_eh',0];", 0.6, ""];
+"ACE_USMC_Soldier_D" createUnit [getMarkerPos "bbqSpawn", bravo, "bbq8=this; this setVariable ['ace_w_eh',0];", 0.6, ""];
+"ACE_USMC_Soldier_D" createUnit [getMarkerPos "bbqSpawn", bravo, "bbq9=this; this setVariable ['ace_w_eh',0];", 0.6, ""];
 
 waitUntil {({alive _x} count units bravo) == 9};
 

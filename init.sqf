@@ -4,6 +4,7 @@ startLoadingScreen ["Loading mission, please wait..."];
 debugModeOn = false;
 [] execVM "loadout\playersinit.sqf";
 [] execVM "loadout\victors\setupVictors.sqf";
+[] execVM "aceWounds.sqf";
 [] execVM "extras\extrasInit.sqf";
 [] execVM "extras\commMenu\customComms.sqf";
 major setGroupID ["HAMMER","GroupColor4"];
