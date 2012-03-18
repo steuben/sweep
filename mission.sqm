@@ -115,7 +115,8 @@ class Mission
 					rank="CAPTAIN";
 					skill=0.60000002;
 					text="steuben";
-					init="this setVariable [""ace_w_eh"",0];";
+					init="this setVariable [""ace_w_eh"",0]; this setVariable [""ace_sys_wounds_no_medical_gear"", true];";
+					description="Platoon-Leader";
 				};
 			};
 			class Waypoints
@@ -145,12 +146,14 @@ class Mission
 					azimut=341.311;
 					id=49;
 					side="WEST";
-					vehicle="ACE_USMC_Soldier_TL_D";
+					vehicle="ACE_USMC_Soldier_SL_D";
 					player="PLAY CDG";
 					leader=1;
 					rank="CAPTAIN";
 					skill=1;
 					text="bbq";
+					init="this setVariable [""ace_w_eh"",0];";
+					description="Squad-Leader";
 				};
 			};
 			class Waypoints
@@ -563,30 +566,21 @@ class Mission
 			side="LOGIC";
 			class Vehicles
 			{
-				items=3;
+				items=2;
 				class Item0
 				{
-					position[]={3808.8281,13.978282,3091.4463};
+					position[]={3807.918,13.73581,3063.2441};
 					id=106;
 					side="LOGIC";
-					vehicle="ACE_Wounds_Logic";
+					vehicle="ACE_Wounds_EveryoneMedic";
 					leader=1;
 					lock="UNLOCKED";
 					skill=0.60000002;
 				};
 				class Item1
 				{
-					position[]={3807.918,13.73581,3063.2441};
-					id=107;
-					side="LOGIC";
-					vehicle="ACE_Wounds_EveryoneMedic";
-					lock="UNLOCKED";
-					skill=0.60000002;
-				};
-				class Item2
-				{
 					position[]={3828.0845,13.920845,3063.4971};
-					id=108;
+					id=107;
 					side="LOGIC";
 					vehicle="ACE_Wounds_FullHeal";
 					lock="UNLOCKED";

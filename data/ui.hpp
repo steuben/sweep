@@ -4,7 +4,7 @@ class uiAssmanStart
   idd = -1;
   movingEnable = true;
   controlsBackground[] = {"bgShape","titleHome"};
-  controls[] = {"btn_reqFiremission","btn_reqAirsupport","btn_reqCarpetbomb","btn_reqSatscan","subtitleH1_support_artillery","subtitleH1_support_air","subtitleH1_support_satscan", "btn_close"};
+  controls[] = {"btn_reqFiremission","btn_reqAirsupport","btn_reqAirtransport","btn_reqCarpetbomb","btn_reqSatscan","subtitleH1_support_artillery","subtitleH1_support_air","subtitleH1_support_satscan", "btn_close"};
   objects[] = {};
   
   #include "assmanStart.hpp"
@@ -32,4 +32,16 @@ class uiAssmanDismissCAS
   objects[] = {};
   
   #include "assmanDismissCAS.hpp"
+}; 
+
+class uiAssmanDismissELVIS 
+{
+
+  idd = -1;
+  movingEnable = true;
+  controlsBackground[] = {"bgShape","titleBarText"};
+  controls[] = {"titleDismissELVIS","btn_backToStart","btn_dismissELVIS","btn_close"};
+  objects[] = {};
+  
+  #include "assmanDismissELVIS.hpp"
 }; 

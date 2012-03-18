@@ -90,5 +90,19 @@
   };
   
   
+  class btn_reqAirtransport:ButtonControlContent 
+  {
+    
+	idc = -1;
+    type = 1;
+	
+    x = 0.714;
+    y = 0.55;
+	
+	text = "PAT 'ELVIS'";
+	action = "if (supportELVISBusy) exitWith {hint ""ASSET BUSEY""}; if (!supportELVIS) then {[0, player] execVM ""extras\supportSquad\elvis.sqf""; assmanStart = false; closeDialog 0};   if (supportELVIS) then { closeDialog 0; _ok = createDialog ""uiAssmanDismissELVIS""; };"	
+  };
+  
+  
   
  

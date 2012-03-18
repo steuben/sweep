@@ -126,6 +126,15 @@ class Params
                 texts[] = {"Disabled", "Enabled"};
                 default = 0;
         };
+		
+		class woundsSystem
+        {
+        //paramsArray[8]
+                title = "ACE Wounds";
+                values[] = {0, 1};
+                texts[] = {"Disabled", "Enabled"};
+                default = 1;
+        };
 };
 
 
@@ -142,3 +151,23 @@ class CfgSounds
 		titles[] = {};
 	};
 };
+
+/*
+#define false 0
+#define true  1
+
+class Extended_Init_Eventhandlers
+{
+    class Man
+    {
+        class SLX_XEH_RespawnInitMan
+        {
+            onRespawn = true;                    // Run this even after respawn
+            init      = "player setVariable ['ace_w_eh',0];";
+        };
+    };
+};*/
+
+class sweep1 { // Replace mission_name with name of your mission
+      serverInit = "if (params select 8) == 0 then { ace_sys_wounds_enabled = false; publicVariable 'ace_sys_wounds_disabled' }";
+   };
